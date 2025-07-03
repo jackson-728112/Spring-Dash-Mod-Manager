@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ChunkSpecification" load_steps=3 format=3 uid="uid://1csk051sk10e"]
+
+[ext_resource type="PackedScene" uid="uid://da155dxmpwtsy" path="res://endless/chunks/scenes/snow/chunk_f.tscn" id="1_fhoj0"]
+[ext_resource type="Script" path="res://endless/chunks/chunk_specification.gd" id="2_sgsmt"]
+
+[resource]
+script = ExtResource("2_sgsmt")
+chunk_scene = ExtResource("1_fhoj0")
+safe_for_start = false

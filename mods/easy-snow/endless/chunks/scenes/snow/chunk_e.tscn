@@ -1,0 +1,849 @@
+[gd_scene load_steps=48 format=3 uid="uid://bm3y15umvtjkr"]
+
+[ext_resource type="PackedScene" path="res://endless/chunks/chunk_base.tscn" id="1_5unbt"]
+[ext_resource type="PackedScene" uid="uid://bmyueka2fs7l8" path="res://levels/enemy_navigation_region_3d.tscn" id="2_rbf8h"]
+[ext_resource type="PackedScene" uid="uid://htxtus3twly2" path="res://environment/islands/snow/island_large_standard_a_snow.tscn" id="3_p13yq"]
+[ext_resource type="PackedScene" uid="uid://c1i6b75d187n7" path="res://levels/components/obstacles/anti_gravity/anti_gravity.tscn" id="4_kvxfe"]
+[ext_resource type="PackedScene" uid="uid://dg38dmrf3iusb" path="res://environment/islands/snow/island_large_curved_a_snow.tscn" id="4_mnynk"]
+[ext_resource type="PackedScene" uid="uid://bq3l887v2ff77" path="res://environment/rocks/round/dirt/rock_round_l_a_dirt.tscn" id="5_nemig"]
+[ext_resource type="PackedScene" uid="uid://brso6di77kcv" path="res://environment/rocks/round/dirt/rock_round_l_c_dirt.tscn" id="6_dof3j"]
+[ext_resource type="PackedScene" uid="uid://cn3kh2hxnipg3" path="res://levels/components/breakable_platform/breakable_platform.tscn" id="8_kjawm"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/cache/scatter_cache.gd" id="9_dkpg3"]
+[ext_resource type="Script" path="res://common/utils/path_placer/path_placer.gd" id="9_epc6t"]
+[ext_resource type="PackedScene" uid="uid://ddy4xpw7acagm" path="res://environment/islands/snow/island_medium_standard_a_snow.tscn" id="9_yy4ye"]
+[ext_resource type="PackedScene" path="res://environment/decor/paths/stone/path_stone.tscn" id="10_c0rkp"]
+[ext_resource type="PackedScene" uid="uid://oh08u1y0aj0" path="res://environment/islands/snow/island_small_standard_a_snow.tscn" id="10_hn0ae"]
+[ext_resource type="PackedScene" path="res://environment/rocks/detailed/rock_round_a.tscn" id="11_fjetr"]
+[ext_resource type="PackedScene" uid="uid://k6cm6c3fvepb" path="res://environment/islands/snow/island_medium_curved_a_snow.tscn" id="11_kvwsl"]
+[ext_resource type="PackedScene" uid="uid://c6yumh0s2o5m8" path="res://environment/rocks/round/rock_round_l_d.tscn" id="12_hwxs2"]
+[ext_resource type="PackedScene" uid="uid://c86o67duuik6d" path="res://environment/islands/snow/island_medium_wall_a_snow.tscn" id="12_xvm8x"]
+[ext_resource type="PackedScene" uid="uid://bcdf1dq63ebjr" path="res://environment/rocks/round/rock_round_l_c.tscn" id="13_2waag"]
+[ext_resource type="PackedScene" uid="uid://cbj3daj5hju6y" path="res://levels/components/obstacles/speed_boost/speed_boost.tscn" id="13_jkbl6"]
+[ext_resource type="PackedScene" uid="uid://cbu0setaidbnt" path="res://environment/trees/generic/snow/tree_generic_a_snow.tscn" id="14_bh60u"]
+[ext_resource type="PackedScene" uid="uid://c18ktj8w7826h" path="res://environment/trees/generic/snow/tree_generic_b_snow.tscn" id="15_5726i"]
+[ext_resource type="PackedScene" uid="uid://dmjw2ewn5v1jg" path="res://environment/trees/generic/snow/tree_generic_d_snow.tscn" id="16_jrjw7"]
+[ext_resource type="PackedScene" uid="uid://cws4v0poscq1b" path="res://environment/trees/generic/snow/tree_generic_damaged_b_snow.tscn" id="17_3wvup"]
+[ext_resource type="PackedScene" uid="uid://bd6i6gj6dcmbt" path="res://environment/trees/generic/snow/tree_generic_damaged_c_snow.tscn" id="18_oxn25"]
+[ext_resource type="PackedScene" uid="uid://b64fmyua1b7o5" path="res://environment/trees/generic/snow/tree_generic_e_snow.tscn" id="19_4hp7v"]
+[ext_resource type="PackedScene" uid="uid://csxphhqtnea76" path="res://environment/trees/generic/snow/tree_generic_f_snow.tscn" id="20_5a3kg"]
+[ext_resource type="PackedScene" uid="uid://1se70y8l2h11" path="res://environment/trees/generic/snow/tree_generic_g_snow.tscn" id="21_bk2en"]
+[ext_resource type="PackedScene" uid="uid://qpwpcpfvlj8h" path="res://environment/decor/paths/wood/path_wood.tscn" id="25_81g10"]
+[ext_resource type="PackedScene" uid="uid://b752g4jmmq1hn" path="res://environment/trees/fir/snow/tree_fir_a_snow.tscn" id="27_q1i6s"]
+[ext_resource type="PackedScene" uid="uid://ds7w1onyl3nse" path="res://environment/rocks/round/rock_round_l_a.tscn" id="28_wicvv"]
+[ext_resource type="PackedScene" uid="uid://cj7h4y6oe7gke" path="res://environment/trees/fir/snow/tree_fir_b_snow.tscn" id="29_8s8xc"]
+[ext_resource type="PackedScene" uid="uid://cnqw1umjlajj0" path="res://environment/rocks/round/rock_round_l_e.tscn" id="29_hd0rs"]
+[ext_resource type="PackedScene" uid="uid://ckyy2jgm6gs4a" path="res://environment/trees/fir/snow/tree_fir_c_snow.tscn" id="30_urvbq"]
+[ext_resource type="PackedScene" uid="uid://ixr4ecid5ohe" path="res://environment/trees/fir/snow/tree_fir_d_snow.tscn" id="30_x2b1e"]
+[ext_resource type="PackedScene" uid="uid://dtm6qp083dy8m" path="res://environment/trees/fir/snow/tree_fir_e_snow.tscn" id="31_tuvxr"]
+[ext_resource type="PackedScene" path="res://environment/trees/fir/snow/fir_stump_a_snow.tscn" id="32_e21oj"]
+[ext_resource type="PackedScene" uid="uid://ciocpsy3kabon" path="res://environment/trees/fir/snow/tree_fir_damaged_a_snow.tscn" id="33_xowpd"]
+[ext_resource type="PackedScene" uid="uid://bwmq3nlxrtwl" path="res://environment/rocks/round/rock_round_l_b.tscn" id="34_pewsj"]
+[ext_resource type="PackedScene" uid="uid://cd28dc4s3dvya" path="res://enemies/silk/worm/silk_worm.tscn" id="35_2tj1a"]
+[ext_resource type="PackedScene" uid="uid://b18tpvdpitliu" path="res://environment/trees/generic/snow/tree_generic_c_snow.tscn" id="37_j3rqa"]
+[ext_resource type="PackedScene" uid="uid://b41552s3uefxr" path="res://environment/rocks/round/dirt/rock_round_l_d_dirt.tscn" id="39_d8u1f"]
+[ext_resource type="PackedScene" path="res://environment/rocks/detailed/rock_tall_a.tscn" id="40_sfaec"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_yrhmd"]
+resource_local_to_scene = true
+vertices = PackedVector3Array(17.1753, 11.4523, -52.4435, 18.4253, 11.4523, -52.4435, 18.6753, 11.4523, -53.6935, 17.9253, 11.4523, -55.6935, 16.6753, 11.4523, -55.6935, 12.9253, 11.4523, -58.4435, 11.4253, 11.4523, -57.4435, 12.6753, 11.4523, -55.9435, 15.6753, 11.4523, -56.6935, 15.6753, 11.4523, -58.1935, 15.6753, 11.2023, -48.9435, 16.6753, 11.4523, -49.6935, 16.1753, 11.7023, -51.4435, 14.1753, 11.7023, -50.9435, 12.6753, 11.4523, -55.9435, 12.4253, 11.7023, -54.9435, 14.4253, 11.7023, -53.1935, 17.1753, 11.4523, -52.4435, 16.6753, 11.4523, -55.6935, 15.6753, 11.4523, -56.6935, 14.1753, 11.7023, -50.9435, 12.6753, 11.4523, -49.9435, 12.6753, 11.2023, -48.4435, 15.6753, 10.9523, -48.1935, 15.6753, 11.2023, -48.9435, 14.4253, 11.7023, -53.1935, 14.1753, 11.7023, -50.9435, 16.1753, 11.7023, -51.4435, 17.1753, 11.4523, -52.4435, 9.67535, 11.4523, -51.4435, 10.9253, 11.4523, -51.1935, 11.4253, 11.4523, -51.6935, 10.4253, 11.4523, -53.6935, 9.42535, 11.4523, -52.1935, -1.32465, 3.20234, -47.4435, 2.17535, 3.20234, -47.4435, 2.17535, 3.20234, -51.4435, -1.32465, 3.20234, -51.6935, -19.0747, 16.4523, -43.9435, -19.8247, 16.4523, -43.9435, -19.8247, 16.4523, -43.1935, -17.3247, 16.4523, -46.9435, -18.3247, 16.4523, -45.9435, -18.3247, 16.4523, -44.6935, -17.3247, 16.4523, -44.1935, -15.5747, 16.4523, -46.1935, -18.5747, 16.2023, -38.6935, -17.3247, 16.2023, -38.1935, -16.5747, 16.2023, -40.1935, -17.5747, 16.4523, -41.4435, -19.0747, 16.4523, -40.6935, -19.8247, 16.4523, -43.1935, -20.5747, 16.4523, -42.6935, -19.0747, 16.4523, -40.6935, -19.8247, 16.4523, -43.1935, -19.0747, 16.4523, -40.6935, -17.5747, 16.4523, -41.4435, -17.3247, 16.4523, -44.1935, -19.0747, 16.4523, -43.9435, -12.3247, 16.2023, -46.9435, -13.5747, 16.4523, -48.6935, -14.8247, 16.4523, -47.6935, -15.5747, 16.4523, -46.1935, -17.3247, 16.4523, -44.1935, -18.3247, 16.4523, -44.6935, -19.0747, 16.4523, -43.9435, -14.8247, 16.4523, -47.6935, -17.3247, 16.4523, -48.4435, -17.3247, 16.4523, -46.9435, -15.5747, 16.4523, -46.1935, -9.32465, 24.9523, -41.9435, -9.32465, 24.7023, -41.4435, -7.82465, 24.9523, -41.9435, -8.32465, 25.2023, -42.9435, -7.82465, 24.9523, -41.9435, -6.82465, 24.7023, -40.4435, -5.57465, 24.7023, -40.6935, -7.07465, 25.2023, -42.9435, -8.32465, 25.2023, -42.9435, -13.8247, 15.4523, -40.9435, -13.0747, 15.4523, -41.1935, -13.3247, 15.4523, -42.1935, -14.3247, 15.4523, -42.1935, 1.17535, 2.45234, -40.9435, 1.42535, 2.45234, -36.6935, 4.92535, 2.45234, -36.9435, 4.67535, 2.45234, -41.1935, -7.32465, 23.9523, -38.1935, -7.32465, 23.7023, -36.9435, -6.57465, 23.9523, -37.4435, -7.32465, 23.9523, -38.1935, -6.57465, 23.9523, -37.4435, -7.57465, 24.2023, -39.4435, -8.57465, 24.2023, -39.4435, -7.32465, 23.9523, -38.1935, -7.57465, 24.2023, -39.4435, 12.9253, 15.9523, -34.4435, 12.9253, 15.9523, -33.9435, 13.9253, 15.9523, -33.9435, 17.1753, 16.2023, -35.4435, 17.6753, 16.2023, -35.9435, 16.4253, 16.2023, -36.6935, 14.6753, 16.2023, -33.1935, 14.6753, 15.9523, -32.1935, 15.4253, 16.2023, -31.4435, 18.4253, 16.2023, -31.1935, 17.9253, 16.2023, -33.1935, 17.1753, 16.2023, -33.9435, 15.4253, 15.9523, -38.9435, 13.4253, 15.7023, -39.4435, 13.9253, 15.9523, -37.6935, 16.4253, 16.2023, -36.6935, 16.6753, 15.9523, -37.9435, 20.6753, 16.2023, -31.1935, 20.9253, 16.2023, -32.4435, 20.4253, 16.2023, -33.1935, 17.9253, 16.2023, -33.1935, 18.4253, 16.2023, -31.1935, 19.4253, 16.2023, -29.4435, 19.4253, 16.2023, -29.4435, 21.6753, 16.2023, -30.4435, 20.6753, 16.2023, -31.1935, 13.1753, 15.9523, -36.9435, 11.9253, 15.9523, -37.1935, 11.4253, 15.7023, -35.6935, 12.9253, 15.9523, -34.4435, 13.9253, 15.9523, -33.9435, 17.1753, 16.2023, -33.9435, 17.1753, 16.2023, -35.4435, 16.4253, 16.2023, -36.6935, 13.9253, 15.9523, -33.9435, 14.6753, 16.2023, -33.1935, 17.1753, 16.2023, -33.9435, 16.4253, 16.2023, -36.6935, 13.9253, 15.9523, -37.6935, 13.1753, 15.9523, -36.9435, -5.32465, 23.9523, -37.9435, -4.82465, 23.9523, -37.4435, -4.82465, 24.2023, -38.1935, -4.57465, 23.4523, -35.4435, -3.82465, 23.7023, -36.1935, -4.32465, 23.7023, -36.6935, -5.07465, 23.4523, -35.6935, 0.925346, 37.9523, -31.4435, 1.67535, 37.9523, -31.4435, 0.925346, 37.9523, -32.1935, 0.425346, 37.9523, -31.6935, 0.175346, 37.7023, -33.6935, -0.0746536, 37.9523, -32.9435, 0.425346, 37.9523, -32.6935, 1.17535, 37.7023, -33.4435, 0.175346, 37.7023, -33.6935, 0.425346, 37.9523, -32.6935, 0.925346, 37.9523, -32.1935, 0.175346, 37.9523, -30.1935, 0.925346, 37.9523, -31.4435, 0.425346, 37.9523, -31.6935, -0.574654, 37.9523, -30.9435, 0.925346, 37.9523, -32.1935, 0.425346, 37.9523, -32.6935, 0.425346, 37.9523, -31.6935, -5.32465, 37.9523, -31.4435, -6.57465, 37.9523, -31.4435, -5.57465, 37.9523, -30.4435, -5.57465, 37.9523, -29.4435, -6.32465, 37.9523, -28.9435, -6.07465, 37.9523, -28.4435, -4.32465, 38.2023, -28.4435, -4.32465, 38.2023, -29.1935, -4.32465, 38.2023, -29.1935, -3.57465, 38.2023, -29.6935, -4.32465, 37.9523, -30.4435, -5.57465, 37.9523, -30.4435, -5.57465, 37.9523, -29.4435, -4.32465, 37.9523, -30.4435, -4.32465, 37.9523, -32.4435, -5.32465, 37.9523, -31.4435, -5.57465, 37.9523, -30.4435, -2.57465, 37.9523, -32.1935, -2.07465, 37.9523, -31.6935, -2.07465, 37.9523, -32.4435, -18.3247, 11.7023, -31.9435, -20.0747, 11.7023, -31.6935, -18.5747, 11.7023, -30.1935, -18.0747, 11.7023, -31.4435, -18.5747, 11.7023, -30.1935, -18.0747, 11.7023, -28.6935, -16.3247, 11.7023, -29.1935, -17.3247, 11.7023, -31.4435, -18.0747, 11.7023, -31.4435, -1.82465, 37.9523, -31.4435, -1.82465, 38.2023, -30.6935, -1.32465, 37.9523, -30.9435, -9.32465, 37.7023, -31.1935, -8.82465, 37.9523, -30.1935, -8.32465, 37.9523, -30.4435, 14.1753, 16.2023, -21.1935, 13.1753, 16.2023, -21.9435, 13.1753, 16.2023, -21.1935, 19.6753, 16.2023, -21.6935, 20.1753, 16.2023, -20.9435, 20.9253, 16.2023, -21.1935, 21.4253, 15.9523, -22.1935, 20.4253, 16.2023, -22.9435, 12.4253, 16.2023, -20.4435, 10.1753, 15.9523, -18.9435, 10.9253, 15.9523, -16.9435, 16.6753, 16.2023, -17.4435, 16.4253, 16.2023, -20.4435, 15.1753, 16.2023, -21.1935, 19.9253, 16.2023, -25.9435, 19.1753, 16.2023, -24.1935, 20.1753, 16.2023, -24.4435, 21.4253, 16.2023, -25.1935, 14.1753, 16.2023, -21.1935, 13.1753, 16.2023, -21.1935, 12.4253, 16.2023, -20.4435, 10.1753, 15.9523, -18.9435, 10.1753, 15.9523, -17.6935, 10.9253, 15.9523, -16.9435, 22.4253, 16.2023, -27.6935, 23.4253, 15.9523, -28.4435, 22.9253, 15.9523, -29.9435, 21.4253, 16.2023, -25.1935, 22.4253, 16.2023, -26.4435, 22.4253, 16.2023, -27.6935, 12.4253, 16.2023, -20.4435, 10.9253, 16.2023, -20.6935, 10.1753, 15.9523, -18.9435, 19.6753, 16.2023, -21.6935, 20.4253, 16.2023, -22.9435, 20.1753, 16.2023, -24.4435, 19.1753, 16.2023, -24.1935, 17.6753, 16.2023, -22.6935, 17.4253, 16.2023, -21.6935, 15.1753, 16.2023, -21.1935, 14.1753, 16.2023, -21.1935, 12.4253, 16.2023, -20.4435, 22.4253, 16.2023, -27.6935, 22.9253, 15.9523, -29.9435, 21.6753, 16.2023, -30.4435, 19.4253, 16.2023, -29.4435, 19.9253, 16.2023, -25.9435, 21.4253, 16.2023, -25.1935, 17.4253, 16.2023, -21.6935, 17.6753, 16.2023, -22.6935, 15.9253, 16.2023, -22.1935, 15.1753, 16.2023, -21.1935, 16.4253, 16.2023, -20.4435, -11.0747, 37.4523, -28.4435, -10.3247, 37.7023, -27.9435, -9.82465, 37.7023, -28.1935, -11.0747, 37.4523, -29.1935, 1.17535, 3.45234, -26.9435, 1.17535, 3.45234, -24.9435, 4.42535, 3.45234, -24.6935, 4.92535, 3.45234, -27.1935, 4.92535, 3.45234, -28.6935, 1.42535, 3.45234, -29.1935, 0.925346, 37.9523, -27.9435, 1.92535, 37.9523, -27.4435, 1.67535, 37.9523, -28.9435, 0.925346, 37.9523, -28.9435, 14.4253, 16.2023, -24.9435, 15.9253, 15.9523, -24.6935, 14.9253, 16.2023, -25.6935, 14.1753, 16.2023, -25.6935, 16.4253, 16.2023, -28.4435, 15.6753, 16.2023, -28.6935, 15.1753, 16.2023, -28.1935, 14.1753, 16.2023, -25.6935, 14.9253, 16.2023, -26.4435, 14.1753, 16.2023, -25.6935, 14.9253, 16.2023, -25.6935, 14.9253, 16.2023, -26.4435, -2.82465, 38.2023, -23.6935, -3.57465, 38.2023, -22.6935, -2.82465, 38.2023, -23.1935, -1.32465, 38.2023, -25.9435, -0.324654, 38.2023, -25.9435, -0.824654, 38.2023, -26.6935, -2.07465, 38.2023, -25.1935, -1.32465, 38.2023, -25.9435, -0.824654, 38.2023, -26.6935, -2.32465, 38.2023, -26.1935, -3.57465, 38.2023, -25.4435, -2.82465, 38.2023, -24.6935, -2.82465, 38.2023, -24.6935, -2.82465, 38.2023, -23.6935, -2.07465, 38.2023, -24.1935, -2.07465, 38.2023, -25.1935, -4.57465, 38.2023, -26.1935, -6.07465, 38.2023, -26.1935, -4.82465, 38.2023, -25.1935, -4.57465, 38.2023, -26.1935, -4.82465, 38.2023, -25.1935, -3.57465, 38.2023, -25.4435, -2.32465, 38.2023, -26.1935, -3.57465, 38.2023, -27.9435, -2.82465, 38.2023, -23.1935, -1.32465, 38.2023, -22.9435, -1.07465, 38.2023, -23.4435, -2.07465, 38.2023, -24.1935, -2.82465, 38.2023, -23.6935, 3.67535, 37.9523, -25.9435, 2.92535, 37.9523, -25.4435, 4.67535, 37.9523, -25.1935, 5.17535, 37.9523, -25.9435, 3.67535, 37.9523, -27.6935, 3.67535, 37.9523, -25.9435, 4.67535, 37.9523, -25.1935, 0.175346, 38.2023, -23.9435, 0.675346, 38.2023, -23.9435, 0.675346, 38.2023, -24.6935, 0.425346, 38.2023, -25.1935, 0.425346, 38.2023, -25.1935, 0.675346, 38.2023, -24.6935, 1.67535, 38.2023, -25.4435, 1.42535, 38.2023, -25.9435, 1.42535, 38.2023, -25.9435, -0.0746536, 38.2023, -25.6935, 0.425346, 38.2023, -25.1935, -11.5747, 6.70234, -24.1935, -11.0747, 6.45234, -23.4435, -10.0747, 6.45234, -23.1935, -7.32465, 6.45234, -23.1935, -7.32465, 6.45234, -23.6935, -10.0747, 6.45234, -25.6935, 6.67535, 37.7023, -23.6935, 5.17535, 37.9523, -24.1935, 4.67535, 37.9523, -23.4435, 5.67535, 37.7023, -21.6935, 6.42535, 37.7023, -22.1935, -5.57465, 38.2023, -23.4435, -5.57465, 37.9523, -22.6935, -4.82465, 38.2023, -23.1935, -5.07465, 38.2023, -23.6935, 2.67535, 37.9523, -23.4435, 2.67535, 37.9523, -22.9435, 3.17535, 37.9523, -22.9435, 3.17535, 37.9523, -23.4435, -1.57465, 38.2023, -21.1935, -1.57465, 38.2023, -20.6935, -0.824654, 38.2023, -20.9435, -0.824654, 38.2023, -21.4435, 15.1753, 12.7023, -19.6935, 15.9253, 12.7023, -19.4435, 15.6753, 12.9523, -19.9435, -1.82465, 37.9523, -18.4435, -2.82465, 37.9523, -18.4435, -1.82465, 37.7023, -17.9435, -1.82465, 37.7023, -17.9435, 0.175346, 37.7023, -18.4435, -1.32465, 37.9523, -19.1935, -1.82465, 37.9523, -18.4435, 1.17535, 0.202345, -18.6935, 0.425346, 0.202345, -18.9435, 0.425346, 0.452345, -17.9435, -7.32465, 0.452345, -10.9435, -7.32465, 0.702345, -9.44351, -6.07465, 0.702345, -10.1935, -0.324654, 0.452345, -17.1935, -1.07465, 0.452345, -17.1935, -1.32465, 0.702345, -15.9435, 7.92535, 0.452345, -8.19351, 7.92535, 0.452345, -9.44351, 7.17535, 0.702345, -9.94351, 3.42535, 0.952345, -8.19351, 5.67535, 0.702345, -7.69351, 3.42535, 0.952345, -8.19351, 4.17535, 0.702345, -7.19351, 5.67535, 0.702345, -7.69351, 5.67535, 0.702345, -7.69351, 7.17535, 0.452345, -7.19351, 7.92535, 0.452345, -8.19351, 7.17535, 0.702345, -9.94351, 7.17535, 0.702345, -10.9435, 5.92535, 0.702345, -11.9435, 2.17535, 0.952345, -8.19351, 3.42535, 0.952345, -8.19351, -5.07465, 0.702345, -12.1935, -6.07465, 0.452345, -12.9435, -7.32465, 0.452345, -10.9435, -6.07465, 0.702345, -10.1935, -4.32465, 0.952345, -10.1935, -2.57465, 0.952345, -6.69351, 1.42535, 0.952345, -7.44351, 2.17535, 0.952345, -8.19351, -3.32465, 0.952345, -9.19351, -2.57465, 0.952345, -6.69351, 1.42535, 0.952345, -6.69351, 1.42535, 0.952345, -7.44351, -4.07465, 0.702345, -12.1935, -5.07465, 0.702345, -12.1935, -4.32465, 0.952345, -10.1935, 0.425346, 0.452345, -17.9435, -0.324654, 0.452345, -17.1935, -1.32465, 0.702345, -15.9435, -1.32465, 0.702345, -15.9435, -3.07465, 0.702345, -13.1935, -3.32465, 0.952345, -9.19351, 2.17535, 0.952345, -8.19351, 5.92535, 0.702345, -11.9435, 4.92535, 0.702345, -14.6935, -4.07465, 0.702345, -12.1935, -4.32465, 0.952345, -10.1935, -3.32465, 0.952345, -9.19351, -3.07465, 0.702345, -13.1935, -1.32465, 0.702345, -15.9435, -3.07465, 0.702345, -14.6935, -3.07465, 0.702345, -13.1935, 1.17535, 0.202345, -18.6935, 0.425346, 0.452345, -17.9435, -1.32465, 0.702345, -15.9435, 4.92535, 0.702345, -14.6935, -3.32465, 0.702345, -3.44351, -4.32465, 0.702345, -2.44351, -3.57465, 0.452345, -1.69351, -1.82465, 0.702345, -1.94351, -0.824654, 0.702345, -0.943508, -0.824654, 0.452345, 0.306492, 0.675346, 0.452345, 0.306492, -1.82465, 0.702345, -1.94351, -0.824654, 0.702345, -0.943508, 0.675346, 0.452345, 0.306492, 2.42535, 0.702345, -1.94351, 1.42535, 0.702345, -3.69351, -2.57465, 0.952345, -6.69351, -3.57465, 0.952345, -4.94351, -3.32465, 0.702345, -3.44351, -1.82465, 0.702345, -1.94351, 1.42535, 0.702345, -3.69351, 1.42535, 0.952345, -6.69351)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 8), PackedInt32Array(8, 5, 9), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 19), PackedInt32Array(16, 19, 18), PackedInt32Array(16, 18, 17), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 24), PackedInt32Array(22, 24, 23), PackedInt32Array(28, 27, 25), PackedInt32Array(25, 27, 26), PackedInt32Array(30, 29, 31), PackedInt32Array(31, 29, 33), PackedInt32Array(31, 33, 32), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 37), PackedInt32Array(40, 39, 38), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 41), PackedInt32Array(44, 41, 45), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 46), PackedInt32Array(46, 48, 47), PackedInt32Array(52, 51, 53), PackedInt32Array(58, 57, 54), PackedInt32Array(54, 57, 56), PackedInt32Array(54, 56, 55), PackedInt32Array(60, 59, 61), PackedInt32Array(61, 59, 62), PackedInt32Array(63, 65, 64), PackedInt32Array(69, 68, 66), PackedInt32Array(66, 68, 67), PackedInt32Array(71, 70, 72), PackedInt32Array(72, 70, 73), PackedInt32Array(78, 77, 74), PackedInt32Array(74, 77, 75), PackedInt32Array(75, 77, 76), PackedInt32Array(80, 79, 81), PackedInt32Array(81, 79, 82), PackedInt32Array(86, 85, 83), PackedInt32Array(83, 85, 84), PackedInt32Array(88, 87, 89), PackedInt32Array(92, 91, 90), PackedInt32Array(95, 94, 93), PackedInt32Array(98, 97, 96), PackedInt32Array(101, 100, 99), PackedInt32Array(103, 102, 104), PackedInt32Array(104, 102, 107), PackedInt32Array(104, 107, 106), PackedInt32Array(104, 106, 105), PackedInt32Array(112, 111, 108), PackedInt32Array(108, 111, 110), PackedInt32Array(108, 110, 109), PackedInt32Array(114, 113, 115), PackedInt32Array(115, 113, 116), PackedInt32Array(116, 113, 117), PackedInt32Array(117, 113, 118), PackedInt32Array(121, 120, 119), PackedInt32Array(123, 122, 124), PackedInt32Array(124, 122, 125), PackedInt32Array(125, 122, 126), PackedInt32Array(129, 128, 127), PackedInt32Array(131, 130, 132), PackedInt32Array(132, 130, 133), PackedInt32Array(133, 130, 135), PackedInt32Array(133, 135, 134), PackedInt32Array(138, 137, 136), PackedInt32Array(139, 142, 140), PackedInt32Array(140, 142, 141), PackedInt32Array(146, 145, 143), PackedInt32Array(143, 145, 144), PackedInt32Array(147, 149, 148), PackedInt32Array(153, 152, 150), PackedInt32Array(150, 152, 151), PackedInt32Array(156, 155, 157), PackedInt32Array(157, 155, 154), PackedInt32Array(160, 159, 158), PackedInt32Array(163, 162, 161), PackedInt32Array(165, 164, 166), PackedInt32Array(166, 164, 168), PackedInt32Array(166, 168, 167), PackedInt32Array(170, 169, 171), PackedInt32Array(171, 169, 173), PackedInt32Array(171, 173, 172), PackedInt32Array(177, 176, 174), PackedInt32Array(174, 176, 175), PackedInt32Array(180, 179, 178), PackedInt32Array(184, 183, 181), PackedInt32Array(181, 183, 182), PackedInt32Array(189, 188, 185), PackedInt32Array(185, 188, 186), PackedInt32Array(186, 188, 187), PackedInt32Array(192, 191, 190), PackedInt32Array(193, 195, 194), PackedInt32Array(198, 197, 196), PackedInt32Array(200, 199, 201), PackedInt32Array(201, 199, 202), PackedInt32Array(202, 199, 203), PackedInt32Array(209, 208, 204), PackedInt32Array(204, 208, 207), PackedInt32Array(204, 207, 205), PackedInt32Array(205, 207, 206), PackedInt32Array(211, 210, 212), PackedInt32Array(212, 210, 213), PackedInt32Array(216, 215, 214), PackedInt32Array(219, 218, 217), PackedInt32Array(222, 221, 220), PackedInt32Array(225, 224, 223), PackedInt32Array(228, 227, 226), PackedInt32Array(231, 230, 232), PackedInt32Array(232, 230, 229), PackedInt32Array(232, 229, 233), PackedInt32Array(233, 229, 234), PackedInt32Array(237, 236, 235), PackedInt32Array(239, 238, 240), PackedInt32Array(240, 238, 241), PackedInt32Array(241, 238, 242), PackedInt32Array(242, 238, 243), PackedInt32Array(245, 244, 246), PackedInt32Array(246, 244, 248), PackedInt32Array(246, 248, 247), PackedInt32Array(250, 249, 251), PackedInt32Array(251, 249, 252), PackedInt32Array(256, 255, 257), PackedInt32Array(257, 255, 254), PackedInt32Array(257, 254, 253), PackedInt32Array(257, 253, 258), PackedInt32Array(262, 261, 259), PackedInt32Array(259, 261, 260), PackedInt32Array(266, 265, 263), PackedInt32Array(263, 265, 264), PackedInt32Array(268, 267, 269), PackedInt32Array(269, 267, 271), PackedInt32Array(269, 271, 270), PackedInt32Array(274, 273, 272), PackedInt32Array(277, 276, 275), PackedInt32Array(280, 279, 278), PackedInt32Array(286, 285, 281), PackedInt32Array(281, 285, 284), PackedInt32Array(281, 284, 282), PackedInt32Array(282, 284, 283), PackedInt32Array(290, 289, 287), PackedInt32Array(287, 289, 288), PackedInt32Array(293, 292, 291), PackedInt32Array(295, 294, 296), PackedInt32Array(296, 294, 297), PackedInt32Array(297, 294, 298), PackedInt32Array(303, 302, 299), PackedInt32Array(299, 302, 300), PackedInt32Array(300, 302, 301), PackedInt32Array(306, 305, 304), PackedInt32Array(310, 309, 307), PackedInt32Array(307, 309, 308), PackedInt32Array(312, 311, 313), PackedInt32Array(313, 311, 314), PackedInt32Array(318, 317, 315), PackedInt32Array(315, 317, 316), PackedInt32Array(321, 320, 319), PackedInt32Array(323, 322, 324), PackedInt32Array(324, 322, 327), PackedInt32Array(324, 327, 326), PackedInt32Array(324, 326, 325), PackedInt32Array(329, 328, 330), PackedInt32Array(330, 328, 332), PackedInt32Array(330, 332, 331), PackedInt32Array(336, 335, 333), PackedInt32Array(333, 335, 334), PackedInt32Array(340, 339, 337), PackedInt32Array(337, 339, 338), PackedInt32Array(344, 343, 341), PackedInt32Array(341, 343, 342), PackedInt32Array(347, 346, 345), PackedInt32Array(350, 349, 348), PackedInt32Array(354, 353, 351), PackedInt32Array(351, 353, 352), PackedInt32Array(357, 356, 355), PackedInt32Array(360, 359, 358), PackedInt32Array(363, 362, 361), PackedInt32Array(365, 364, 366), PackedInt32Array(366, 364, 368), PackedInt32Array(366, 368, 367), PackedInt32Array(371, 370, 369), PackedInt32Array(374, 373, 372), PackedInt32Array(376, 375, 377), PackedInt32Array(377, 375, 379), PackedInt32Array(377, 379, 378), PackedInt32Array(384, 383, 380), PackedInt32Array(380, 383, 381), PackedInt32Array(381, 383, 382), PackedInt32Array(386, 385, 387), PackedInt32Array(387, 385, 388), PackedInt32Array(391, 390, 389), PackedInt32Array(394, 393, 392), PackedInt32Array(397, 396, 395), PackedInt32Array(399, 398, 400), PackedInt32Array(400, 398, 401), PackedInt32Array(401, 398, 403), PackedInt32Array(401, 403, 402), PackedInt32Array(405, 404, 406), PackedInt32Array(406, 404, 407), PackedInt32Array(410, 409, 408), PackedInt32Array(412, 411, 413), PackedInt32Array(413, 411, 414), PackedInt32Array(416, 415, 417), PackedInt32Array(417, 415, 418), PackedInt32Array(421, 420, 419), PackedInt32Array(423, 422, 424), PackedInt32Array(424, 422, 425), PackedInt32Array(425, 422, 426), PackedInt32Array(428, 427, 429), PackedInt32Array(429, 427, 430), PackedInt32Array(430, 427, 431), PackedInt32Array(431, 427, 432)]
+geometry_parsed_geometry_type = 1
+geometry_collision_mask = 64
+agent_height = 1.0
+agent_radius = 1.0
+agent_max_slope = 20.0
+
+[sub_resource type="Curve3D" id="Curve3D_w8xny"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.6742, 0, 7.02823, 0, 0, 0, 0, 0, 0, 3.99909, 0, 4.81803, 0, 0, 0, 0, 0, 0, 2.02702, 0, 3.92393, 0, 0, 0, 0, 0, 0, -0.438075, 0, 2.58126, 0, 0, 0, 0, 0, 0, -2.2799, 0, -0.295176, 0, 0, 0, 0, 0, 0, -2.11971, 0, -3.17641, 0, 0, 0, 0, 0, 0, -2.33624, 0, -5.76139, 0, 0, 0, 0, 0, 0, -3.365, 0, -7.89164, 0, 0, 0, 0, 0, 0, -5.2799, 0, -9.92366),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Curve3D" id="Curve3D_kdsyd"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8.70892, 0, 4.91296, 0, 0, 0, 0, 0, 0, -5.76116, 0, 5.16492, 0, 0, 0, 0, 0, 0, -1.83669, 0, 5.66873, 0, 0, 0, 0, 0, 0, 1.94074, 0, 5.36639, 0, 0, 0, 0, 0, 0, 4.56176, 0, 4.02097, 0, 0, 0, 0, 0, 0, 5.4691, 0, 1.65151, 0, 0, 0, 0, 0, 0, 5.23459, 0, -1.37505, 0, 0, 0, 0, 0, 0, 5.07201, 0, -4.53997, 0, 0, 0, 0, 0, 0, 5.7707, 0, -6.94602, 0, 0, 0, 0, 0, 0, 9.30635, 0, -9.92588),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[sub_resource type="Curve3D" id="Curve3D_2cjv3"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.067, 0, 4.67059, 0, 0, 0, 0, 0, 0, 2.59363, 0, 1.98253, 0, 0, 0, 0, 0, 0, 1.93737, 0, -0.649014, 0, 0, 0, 0, 0, 0, 0.54715, 0, -2.34319, 0, 0, 0, 0, 0, 0, -1.94126, 0, -3.6468, 0, 0, 0, 0, 0, 0, -5.18379, 0, -3.63058),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_oidnm"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.97131, 0, 1.47469, 0, 0, 0, 0, 0, 0, 4.08247, 0, 1.58649, 0, 0, 0, 0, 0, 0, 1.39889, 0, 0.844196, 0, 0, 0, 0, 0, 0, -0.0947876, 0, -0.387719, 0, 0, 0, 0, 0, 0, -0.836754, 0, -1.87112, 0, 0, 0, 0, 0, 0, -0.883362, 0, -3.70814, 0, 0, 0, 0, 0, 0, -0.147125, 0, -6.55),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[node name="Chunk" instance=ExtResource("1_5unbt")]
+
+[node name="ChunkEnd" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -72.7025)
+
+[node name="NavigationRegion3D" parent="." index="2" instance=ExtResource("2_rbf8h")]
+navigation_mesh = SubResource("NavigationMesh_yrhmd")
+
+[node name="IslandLargeStandardA" parent="NavigationRegion3D" index="0" instance=ExtResource("3_p13yq")]
+transform = Transform3D(0.773818, 0, -0.633408, 0, 1, 0, 0.633408, 0, 0.773818, 0.198983, -0.421455, -8.24441)
+
+[node name="AntiGravity" parent="NavigationRegion3D/IslandLargeStandardA" index="1" instance=ExtResource("4_kvxfe")]
+transform = Transform3D(0.9715, 0, -0.237042, 0, 1, 0, 0.237042, 0, 0.9715, 2.09664, 0.903821, -5.67083)
+
+[node name="PathPlacer" type="Path3D" parent="NavigationRegion3D/IslandLargeStandardA" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.66761, 0)
+curve = SubResource("Curve3D_w8xny")
+script = ExtResource("9_epc6t")
+scene = ExtResource("10_c0rkp")
+
+[node name="@Node3D@377200" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="0" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.864156, 0.289543, 1.19139, 0.424918, 1.43796, -0.0412607, -1.15008, 0.313724, -0.910439, 5.66841, -2.3867, 7.02196)
+
+[node name="@Node3D@377201" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="1" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.897589, 0.122558, 1.19554, 0.205702, 1.48583, 0.00212087, -1.18407, 0.165219, -0.905915, 4.76569, -2.07858, 5.82944)
+
+[node name="@Node3D@377202" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="2" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.36443, 0.0590779, 0.620353, 0.0870584, 1.49667, 0.0489478, -0.617049, 0.0805286, -1.36483, 3.79358, -1.91093, 4.72378)
+
+[node name="@Node3D@377203" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="3" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.36537, 0.0402455, 0.619797, 0.0579858, 1.49857, 0.0304314, -0.61839, 0.0516596, -1.36562, 2.42331, -1.83378, 4.10293)
+
+[node name="@Node3D@377204" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="4" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.31701, 0.0232815, 0.717604, 0.0349246, 1.49951, 0.0154473, -0.717131, 0.0302708, -1.31712, 1.09469, -1.77802, 3.41576)
+
+[node name="@Node3D@377205" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="5" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.31698, 0.0250903, 0.717596, 0.0359, 1.49951, 0.0134563, -0.717137, 0.0289889, -1.31715, -0.224401, -1.74223, 2.69733)
+
+[node name="@Node3D@377206" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="6" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.808889, -0.00409862, 1.2632, 0.0180566, 1.4998, 0.0164288, -1.26308, 0.0240655, -0.808732, -1.11431, -1.7182, 1.52455)
+
+[node name="@Node3D@377207" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="7" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.80885, -0.00548143, 1.26322, -0.00775305, 1.49998, 0.00154444, -1.26321, -0.00569641, -0.808867, -1.9233, -1.7169, 0.261673)
+
+[node name="@Node3D@377208" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="8" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(0.0835353, -0.0259297, 1.49745, -0.0309531, 1.49943, 0.0276907, -1.49735, -0.0324425, 0.0829682, -2.23285, -1.73585, -1.13148)
+
+[node name="@Node3D@377209" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="9" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(0.0835353, -0.0259297, 1.49745, -0.0309531, 1.49943, 0.0276907, -1.49735, -0.0324425, 0.0829682, -2.14955, -1.76683, -2.62973)
+
+[node name="@Node3D@377210" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="10" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.124835, -0.0179605, 1.49469, -0.0617756, 1.49867, 0.0128489, -1.49352, -0.0604876, -0.125464, -2.1989, -1.82073, -4.12485)
+
+[node name="@Node3D@377211" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="11" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.124835, -0.0179605, 1.49469, -0.0617756, 1.49867, 0.0128489, -1.49352, -0.0604876, -0.125464, -2.32427, -1.88265, -5.62167)
+
+[node name="@Node3D@377212" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="12" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.65149, -0.0201012, 1.35098, -0.122779, 1.49451, -0.0369715, -1.34554, -0.126639, -0.65075, -2.92695, -2.00563, -6.98288)
+
+[node name="@Node3D@377213" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="13" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.02359, -0.0634012, 1.09465, -0.241452, 1.47377, -0.140417, -1.06957, -0.272023, -1.01589, -3.70466, -2.21003, -8.24798)
+
+[node name="@Node3D@377214" parent="NavigationRegion3D/IslandLargeStandardA/PathPlacer" index="14" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.02153, -0.0498689, 1.09727, -0.41938, 1.40264, -0.326684, -1.01519, -0.529259, -0.969166, -4.7315, -2.53684, -9.3322)
+
+[node name="RockRoundA" parent="NavigationRegion3D/IslandLargeStandardA" index="3" instance=ExtResource("11_fjetr")]
+transform = Transform3D(14.566, 5.28235, -0.195624, -5.25059, 14.5248, 1.25315, 0.610565, -1.1117, 15.4435, 5.73688, -1.43898, -0.149071)
+
+[node name="RockRoundLD" parent="NavigationRegion3D/IslandLargeStandardA" index="4" instance=ExtResource("12_hwxs2")]
+transform = Transform3D(-2.66195, 0.153957, 2.75175, 0.018239, 3.8266, -0.19645, -2.75599, -0.12338, -2.65915, -3.71548, 0.265891, 4.38563)
+
+[node name="RockRoundLC" parent="NavigationRegion3D/IslandLargeStandardA" index="5" instance=ExtResource("13_2waag")]
+transform = Transform3D(3.83168, 0, -1.19209e-07, 0, 3.83168, 0, 1.19209e-07, 0, 3.83168, -3.97365, -0.243535, 7.13259)
+
+[node name="ScatterOutput" type="Marker3D" parent="NavigationRegion3D/IslandLargeStandardA" index="6"]
+transform = Transform3D(0.999998, -4.65661e-09, -1.78814e-07, 2.98023e-08, 0.999999, -6.84522e-08, -2.98023e-08, 3.21306e-08, 0.999999, 0, 1.15189, 0)
+
+[node name="ScatterItem" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="0"]
+
+[node name="TreeGenericASnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem" index="0" instance=ExtResource("14_bh60u")]
+transform = Transform3D(-0.00696397, -0.0252401, 1.54186, 0.000103142, 1.54187, 0.0252408, -1.54206, 0.000217119, -0.00696129, -1.18288, -0.554498, 6.3334)
+
+[node name="ScatterItem2" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="1"]
+
+[node name="TreeGenericBSnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem2" index="0" instance=ExtResource("15_5726i")]
+transform = Transform3D(0.829203, 0.0457404, 1.2974, -0.0232886, 1.53975, -0.0394001, -1.298, 0.00159431, 0.829529, -6.35028, -0.951629, 5.10885)
+
+[node name="ScatterItem3" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="2"]
+
+[node name="ScatterItem4" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="3"]
+
+[node name="TreeGenericDSnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem4" index="0" instance=ExtResource("16_jrjw7")]
+transform = Transform3D(-1.23215, 0.00413421, 0.708046, 0.00577116, 1.42109, 0.00174541, -0.708034, 0.00438873, -1.23215, 2.94724, -0.511646, -0.549749)
+
+[node name="ScatterItem5" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="4"]
+
+[node name="TreeGenericDamagedBSnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem5" index="0" instance=ExtResource("17_3wvup")]
+transform = Transform3D(1.93352, 0.0300142, -0.418216, -0.0113572, 1.97642, 0.0893346, 0.419138, -0.0849046, 1.93169, 2.95327, -0.737654, 7.79527)
+
+[node name="ScatterItem6" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="5"]
+
+[node name="TreeGenericDamagedCSnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem6" index="0" instance=ExtResource("18_oxn25")]
+transform = Transform3D(-2.90462, -0.000885639, 0.572957, -0.0111002, 2.96012, -0.0516965, -0.57285, -0.0528675, -2.90416, -1.07006, -0.866738, -9.62864)
+
+[node name="ScatterItem7" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="6"]
+
+[node name="TreeGenericESnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem7" index="0" instance=ExtResource("19_4hp7v")]
+transform = Transform3D(-1.29764, 0.0313502, 0.701614, 0.0194544, 1.47507, -0.0299295, -0.702045, -0.0170708, -1.29767, -7.30131, -0.899343, -7.21266)
+
+[node name="ScatterItem8" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="7"]
+
+[node name="TreeGenericFSnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem8" index="0" instance=ExtResource("20_5a3kg")]
+transform = Transform3D(1.70086, -0.0209276, -0.350754, 0.0140938, 1.73636, -0.0352564, 0.351094, 0.0316809, 1.70062, -7.23974, -0.696786, -1.27075)
+
+[node name="ScatterItem9" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="8"]
+
+[node name="TreeGenericGSnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem9" index="0" instance=ExtResource("21_bk2en")]
+transform = Transform3D(-0.808828, 0.0727774, -1.15552, 0.0290595, 1.41039, 0.0684888, 1.15744, 0.0154472, -0.809203, 7.38494, -1.23597, -4.06298)
+
+[node name="ScatterItem10" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput" index="9"]
+
+[node name="TreeGenericGSnow" parent="NavigationRegion3D/IslandLargeStandardA/ScatterOutput/ScatterItem10" index="0" instance=ExtResource("21_bk2en")]
+transform = Transform3D(-0.349509, -0.0805086, 1.61042, -0.00776656, 1.64789, 0.0806959, -1.61242, 0.00951369, -0.349465, 7.20701, -1.09065, 4.01899)
+
+[node name="IslandLargeCurvedA" parent="NavigationRegion3D" index="1" instance=ExtResource("4_mnynk")]
+transform = Transform3D(0.750861, 0, 0.66046, 0, 1, 0, -0.66046, 0, 0.750861, 14.2591, 14.3227, -27.0181)
+
+[node name="RockRoundLADirt" parent="NavigationRegion3D/IslandLargeCurvedA" index="1" instance=ExtResource("5_nemig")]
+transform = Transform3D(-6.04231, -7.73876, -1.53079, 7.76661, -6.17365, 0.554019, -1.38252, -0.859571, 9.8026, -1.27626, -4.39232, 5.7786)
+
+[node name="RockRoundLCDirt" parent="NavigationRegion3D/IslandLargeCurvedA" index="2" instance=ExtResource("6_dof3j")]
+transform = Transform3D(7.07579, -4.55444, -5.91175, 6.75039, 0.432709, 7.7462, -3.18182, -9.21023, 3.28727, 1.48759, -4.91124, 0.271997)
+
+[node name="PathPlacer" type="Path3D" parent="NavigationRegion3D/IslandLargeCurvedA" index="3"]
+transform = Transform3D(1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, 1, 0, 3.72232, 0)
+curve = SubResource("Curve3D_kdsyd")
+script = ExtResource("9_epc6t")
+scene = ExtResource("25_81g10")
+
+[node name="@Node3D@432745" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="0" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.48634, -0.158433, -0.12533, 0.155111, 1.49126, -0.0456167, 0.129418, 0.0322411, 1.49406, -8.70575, -2.35796, 4.91232)
+
+[node name="@Node3D@432746" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="1" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.49419, -0.0331469, -0.127696, 0.0328788, 1.49963, -0.00455, 0.127765, 0.00173338, 1.49455, -7.2137, -2.27687, 5.04068)
+
+[node name="@Node3D@432747" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="2" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.49302, 0.023261, -0.142689, -0.0169524, 1.49841, 0.0668897, 0.143575, -0.0649658, 1.4917, -5.72396, -2.27525, 5.17068)
+
+[node name="@Node3D@432748" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="3" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.48753, 0.0326912, -0.190232, -0.0239708, 1.49818, 0.0700188, 0.191526, -0.0663967, 1.48624, -4.23327, -2.2916, 5.36247)
+
+[node name="@Node3D@432749" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="4" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.4878, 0.0122369, -0.190503, 0.00314765, 1.49514, 0.120623, 0.190869, -0.120042, 1.48296, -2.7446, -2.29358, 5.5546)
+
+[node name="@Node3D@432750" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="5" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.49513, 0.012237, 0.120159, -0.0217752, 1.49514, 0.118683, -0.118801, -0.120042, 1.49046, -1.25428, -2.30017, 5.62449)
+
+[node name="@Node3D@432751" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="6" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.4952, -0.0145591, 0.11903, 0.00401038, 1.49415, 0.132378, -0.119851, -0.131636, 1.4894, 0.241823, -2.30862, 5.50502)
+
+[node name="@Node3D@432752" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="7" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.4952, -0.0145591, 0.11903, 0.00401039, 1.49415, 0.132378, -0.119851, -0.131637, 1.4894, 1.73721, -2.30459, 5.38533)
+
+[node name="@Node3D@432753" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="8" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.3344, -0.0542573, 0.68297, 0.00332971, 1.49579, 0.112324, -0.685113, -0.0984073, 1.33077, 3.09406, -2.30449, 4.7769)
+
+[node name="@Node3D@432754" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="9" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.33297, -0.0887548, 0.682139, 0.0501211, 1.49604, 0.0967112, -0.686061, -0.0631491, 1.33242, 4.43074, -2.27514, 4.0904)
+
+[node name="@Node3D@432755" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="10" instance=ExtResource("25_81g10")]
+transform = Transform3D(0.535342, -0.09557, 1.39796, 0.0337036, 1.49696, 0.089431, -1.40081, -0.000506731, 0.536401, 5.04616, -2.27588, 2.76098)
+
+[node name="@Node3D@432756" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="11" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.116148, -0.0757999, 1.49358, 0.0106663, 1.498, 0.0768534, -1.49546, 0.0165715, -0.115453, 5.44665, -2.24262, 1.34181)
+
+[node name="@Node3D@432757" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="12" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.116353, -0.0733311, 1.49368, 0.0194063, 1.498, 0.0750544, -1.49536, 0.0251465, -0.115249, 5.33059, -2.22898, -0.155564)
+
+[node name="@Node3D@432758" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="13" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.0766777, -0.0281968, 1.49777, -0.0295758, 1.49947, 0.0267146, -1.49775, -0.0281663, -0.0772068, 5.22086, -2.24554, -1.6528)
+
+[node name="@Node3D@432759" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="14" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.0751497, -0.0962008, 1.49503, -0.0562544, 1.49603, 0.0934376, -1.49706, -0.0513867, -0.0785584, 5.14538, -2.2994, -3.14811)
+
+[node name="@Node3D@432760" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="15" instance=ExtResource("25_81g10")]
+transform = Transform3D(0.41692, -0.0962008, 1.43768, -0.022677, 1.49603, 0.106681, -1.44072, -0.0513867, 0.414363, 5.10381, -2.35338, -4.64184)
+
+[node name="@Node3D@432761" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="16" instance=ExtResource("25_81g10")]
+transform = Transform3D(0.41903, -0.0962008, 1.43707, -0.0225205, 1.49603, 0.106714, -1.44011, -0.0513867, 0.416476, 5.52215, -2.37596, -6.08244)
+
+[node name="@Node3D@432762" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="17" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.1472, -0.0297869, 0.965943, -0.0230405, 1.49802, 0.0735586, -0.966127, -0.071095, 1.14523, 6.23043, -2.4036, -7.33156)
+
+[node name="@Node3D@432763" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="18" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.14538, 0.0439832, 0.967556, -0.108151, 1.49489, 0.0600734, -0.962498, -0.115633, 1.14465, 7.37691, -2.47879, -8.29816)
+
+[node name="@Node3D@432764" parent="NavigationRegion3D/IslandLargeCurvedA/PathPlacer" index="19" instance=ExtResource("25_81g10")]
+transform = Transform3D(1.1242, 0.222787, 0.967748, -0.303431, 1.46892, 0.0143235, -0.945569, -0.206498, 1.14598, 8.52112, -2.68932, -9.26371)
+
+[node name="RockTallA" parent="NavigationRegion3D/IslandLargeCurvedA" index="4" instance=ExtResource("40_sfaec")]
+transform = Transform3D(18.4221, 0, -1.43051e-05, 0, 18.4221, 0, 1.43051e-05, 0, 18.4221, 0.715717, 0.231614, 0.870643)
+
+[node name="ScatterOutput" type="Marker3D" parent="NavigationRegion3D/IslandLargeCurvedA" index="5"]
+transform = Transform3D(0.999998, -4.65661e-09, -2.98023e-07, 2.98023e-08, 0.999999, -6.84522e-08, 1.19209e-07, 3.21306e-08, 0.999999, 3.39673, 2.16105, 3.00985)
+
+[node name="ScatterItem" type="Node3D" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput" index="0"]
+
+[node name="TreeFirA" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem" index="0" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(1.03841, 0.0161193, -0.224606, -0.00609945, 1.06145, 0.0479777, 0.225101, -0.0455985, 1.03743, 3.63956, -0.934305, 3.16903)
+
+[node name="TreeFirA2" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem" index="1" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(0.62933, 0.00911719, 0.906647, -0.0206929, 1.1035, 0.00326686, -0.906457, -0.0188613, 0.629388, -4.71497, -0.818147, 6.54902)
+
+[node name="TreeFirA3" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem" index="2" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(-1.15795, -0.0560558, 0.256315, -0.0440645, 1.18496, 0.0600803, -0.258647, 0.0490823, -1.15775, -2.08384, -1.6925, -8.49973)
+
+[node name="TreeFirA4" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem" index="3" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(-0.915468, 0.0668926, 0.517894, 0.0425083, 1.05132, -0.0606513, -0.520464, -0.0317948, -0.915902, 5.87263, -0.954234, -8.20017)
+
+[node name="ScatterItem2" type="Node3D" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput" index="1"]
+
+[node name="TreeFirB" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem2" index="0" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(1.11433, -0.0137109, -0.229799, 0.00923368, 1.13759, -0.0230985, 0.230022, 0.020756, 1.11418, 2.90578, -1.08589, -12.4261)
+
+[node name="TreeFirB2" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem2" index="1" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(-0.577734, 0.0519839, -0.825371, 0.0207568, 1.00742, 0.0489206, 0.826746, 0.0110337, -0.578002, -8.64651, -0.969159, -0.577196)
+
+[node name="TreeFirB3" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem2" index="2" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(-0.249649, -0.0575062, 1.1503, -0.00554754, 1.17706, 0.0576399, -1.15173, 0.0067955, -0.249618, -6.0866, -0.910248, 0.613548)
+
+[node name="TreeFirB4" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem2" index="3" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(-0.598062, -0.0191705, 0.893841, -0.0232031, 1.07536, 0.00753867, -0.893746, -0.0150899, -0.598322, 1.32359, -1.16094, -13.2397)
+
+[node name="ScatterItem3" type="Node3D" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput" index="2"]
+
+[node name="TreeFirC" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem3" index="0" instance=ExtResource("30_urvbq")]
+transform = Transform3D(0.932774, -0.000503737, 0.485885, 0.010131, 1.05153, -0.0183588, -0.485779, 0.0209626, 0.932593, 3.02331, -1.29738, 5.26123)
+
+[node name="TreeFirC2" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem3" index="1" instance=ExtResource("30_urvbq")]
+transform = Transform3D(0.98692, 0.0272581, -0.317863, -0.0245803, 1.03683, 0.0125946, 0.31808, -0.00445113, 0.987216, 5.38141, -0.984808, -1.37749)
+
+[node name="TreeFirC3" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem3" index="2" instance=ExtResource("30_urvbq")]
+transform = Transform3D(0.805444, 0.0534187, 0.851433, -0.0275861, 1.17197, -0.0474332, -0.852661, 0.0125437, 0.805819, -0.275414, -0.881603, -7.85745)
+
+[node name="TreeFirC4" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem3" index="3" instance=ExtResource("30_urvbq")]
+transform = Transform3D(1.01142, 0.0573937, 0.376857, -0.0390212, 1.07852, -0.0595286, -0.3792, 0.0420983, 1.01129, -6.27067, -0.845263, 5.72375)
+
+[node name="ScatterItem4" type="Node3D" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput" index="3"]
+
+[node name="TreeFirD" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem4" index="0" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(0.155393, -0.0666569, 1.07276, 0.00380786, 1.08394, 0.0668001, -1.07483, -0.00579676, 0.155332, -8.21578, -0.871458, -2.11631)
+
+[node name="TreeFirD2" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem4" index="1" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(-1.10751, -0.00285033, -0.395583, -0.014777, 1.17549, 0.0329013, 0.395317, 0.0359546, -1.10703, -1.15548, -0.903336, -1.69272)
+
+[node name="TreeFirD3" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem4" index="2" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(0.273472, -0.0818082, 1.14232, 0.0272068, 1.17457, 0.0776044, -1.14492, 0.008371, 0.274694, 6.37468, -1.21955, -2.71335)
+
+[node name="TreeFirD4" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem4" index="3" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(-0.730267, -0.0259481, 0.899169, -0.011292, 1.15834, 0.0242563, -0.899472, 0.00652501, -0.730325, 1.29922, -1.26738, 5.43539)
+
+[node name="ScatterItem5" type="Node3D" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput" index="4"]
+
+[node name="TreeFirE" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem5" index="0" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(-1.03767, -0.0023381, -0.243784, -4.55519e-05, 1.06587, -0.0100287, 0.243796, -0.00975249, -1.03762, -0.780903, -1.36933, -9.88081)
+
+[node name="TreeFirE2" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem5" index="1" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(1.10663, -0.0451026, -0.238667, 0.0519565, 1.13146, 0.0270879, 0.237269, -0.037403, 1.10722, -0.700989, -1.07378, -5.8523)
+
+[node name="TreeFirE3" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem5" index="2" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(0.981921, 0.0335815, 0.227435, -0.0256388, 1.00743, -0.0380583, -0.228467, 0.0312741, 0.981757, -7.27451, -1.2698, 7.21597)
+
+[node name="TreeFirE4" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem5" index="3" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(1.04646, -0.0426106, 0.242243, 0.0345104, 1.07369, 0.0397811, -0.243528, -0.030949, 1.04657, -6.95445, -0.895522, -1.00571)
+
+[node name="ScatterItem6" type="Node3D" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput" index="5"]
+
+[node name="FirStumpA" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem6" index="0" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-0.512168, 0.0445098, 1.96809, -0.00682381, 2.03356, -0.0477661, -1.96859, -0.0186292, -0.511874, 6.33076, -1.19099, -7.41882)
+
+[node name="FirStumpA2" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem6" index="1" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-2.1739, 0.075927, 0.18195, 0.083938, 2.1792, 0.0935, -0.178396, 0.100115, -2.17321, -2.34251, -0.963532, -0.696448)
+
+[node name="FirStumpA3" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem6" index="2" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-2.01714, -0.119982, -0.845023, -0.0951223, 2.18662, -0.0834067, 0.848181, -0.0401147, -2.01898, 1.97502, -1.10459, 4.35675)
+
+[node name="FirStumpA4" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem6" index="3" instance=ExtResource("32_e21oj")]
+transform = Transform3D(2.2359, -0.0623433, 0.540333, 0.064578, 2.3002, -0.0018283, -0.540071, 0.0169403, 2.23677, -11.3289, -1.41534, 5.07098)
+
+[node name="ScatterItem7" type="Node3D" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput" index="6"]
+
+[node name="TreeFirDamagedA" parent="NavigationRegion3D/IslandLargeCurvedA/ScatterOutput/ScatterItem7" index="0" instance=ExtResource("33_xowpd")]
+transform = Transform3D(0.752941, 0.0543511, 0.900661, -0.0469545, 1.17382, -0.031582, -0.901077, -0.0157513, 0.75424, -10.4382, -0.970722, 5.4588)
+
+[node name="RockRoundLC" parent="NavigationRegion3D/IslandLargeCurvedA" index="6" instance=ExtResource("13_2waag")]
+transform = Transform3D(2.48277, 0, -0.803782, 0, 2.60964, 0, 0.803782, 0, 2.48277, -1.41645, 0.96876, 7.93617)
+
+[node name="RockRoundLB" parent="NavigationRegion3D/IslandLargeCurvedA" index="7" instance=ExtResource("34_pewsj")]
+transform = Transform3D(2.43562, 0, -1.3113e-06, 0, 2.43562, 0, 1.3113e-06, 0, 2.43562, 3.56191, 0.53239, 7.41197)
+
+[node name="RockRoundLD" parent="NavigationRegion3D/IslandLargeCurvedA" index="8" instance=ExtResource("12_hwxs2")]
+transform = Transform3D(1.63877, 0, -2.1855, 0, 2.73167, 0, 2.1855, 0, 1.63877, 9.1416, 0.903359, -2.89954)
+
+[node name="SilkWorm" parent="NavigationRegion3D/IslandLargeCurvedA" index="9" instance=ExtResource("35_2tj1a")]
+transform = Transform3D(0.87807, -0.466821, -0.105217, 0.47384, 0.817471, 0.327439, -0.0668434, -0.337371, 0.938996, -9.97159, 0.925008, 3.3718)
+
+[node name="BreakablePlatform" parent="NavigationRegion3D" index="2" instance=ExtResource("8_kjawm")]
+transform = Transform3D(0.993872, 0, -0.110532, 0, 0.999999, 0, 0.110532, 0, 0.993872, 3.03352, 2.94876, -26.8407)
+
+[node name="BreakablePlatform2" parent="NavigationRegion3D" index="3" instance=ExtResource("8_kjawm")]
+transform = Transform3D(0.997872, 0, 0.0651941, 0, 0.999999, 0, -0.0651941, 0, 0.997872, 2.98692, 2.001, -38.9149)
+
+[node name="BreakablePlatform3" parent="NavigationRegion3D" index="4" instance=ExtResource("8_kjawm")]
+transform = Transform3D(0.999925, 0, -0.0121472, 0, 0.999999, 0, 0.0121472, 0, 0.999925, 0.490051, 2.71383, -49.4911)
+
+[node name="IslandMediumStandardA" parent="NavigationRegion3D" index="5" instance=ExtResource("9_yy4ye")]
+transform = Transform3D(0.769979, 0, -0.638069, 0, 1, 0, 0.638069, 0, 0.769979, 14.0498, 10.3737, -52.8725)
+
+[node name="PathPlacer" type="Path3D" parent="NavigationRegion3D/IslandMediumStandardA" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.61179, 0)
+curve = SubResource("Curve3D_2cjv3")
+script = ExtResource("9_epc6t")
+scene = ExtResource("25_81g10")
+
+[node name="@Node3D@426297" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="0" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.638879, 0.389718, 1.29998, 0.604211, 1.36825, -0.113243, -1.21522, 0.47541, -0.739745, 4.0592, -2.84043, 4.66108)
+
+[node name="@Node3D@426298" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="1" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.692385, 0.263095, 1.30437, 0.32165, 1.45987, -0.123723, -1.29118, 0.222591, -0.730279, 3.34077, -2.36655, 3.35079)
+
+[node name="@Node3D@426299" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="2" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.693205, 0.259708, 1.30461, 0.316621, 1.46107, -0.122617, -1.29198, 0.218713, -0.730032, 2.61706, -2.03582, 2.03427)
+
+[node name="@Node3D@426300" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="3" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.355488, 0.146189, 1.44992, 0.152692, 1.48795, -0.112588, -1.44925, 0.120912, -0.367514, 2.24355, -1.82266, 0.588043)
+
+[node name="@Node3D@426301" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="4" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.950472, 0.0982972, 1.15626, 0.0321332, 1.49627, -0.100788, -1.15999, -0.0390944, -0.950212, 1.79549, -1.7655, -0.818741)
+
+[node name="@Node3D@426302" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="5" instance=ExtResource("25_81g10")]
+transform = Transform3D(-0.952299, 0.0572447, 1.15752, -0.0404151, 1.49562, -0.107215, -1.15823, -0.0992546, -0.947974, 0.842367, -1.7614, -1.98004)
+
+[node name="@Node3D@426303" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="6" instance=ExtResource("25_81g10")]
+transform = Transform3D(-1.32856, -0.00836878, 0.696318, -0.0547552, 1.4965, -0.0864857, -0.694213, -0.102019, -1.32577, -0.365742, -1.80618, -2.81947)
+
+[node name="@Node3D@426304" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="7" instance=ExtResource("25_81g10")]
+transform = Transform3D(-1.32724, -0.0427127, 0.697569, -0.102996, 1.4928, -0.104563, -0.691244, -0.140418, -1.32381, -1.69512, -1.87742, -3.51549)
+
+[node name="@Node3D@426305" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="8" instance=ExtResource("25_81g10")]
+transform = Transform3D(-1.49722, -0.0912453, -0.00352854, -0.0905941, 1.49157, -0.130375, 0.0114395, -0.12992, -1.49432, -3.1608, -1.96146, -3.63809)
+
+[node name="@Node3D@426306" parent="NavigationRegion3D/IslandMediumStandardA/PathPlacer" index="9" instance=ExtResource("25_81g10")]
+transform = Transform3D(-1.44821, -0.390489, 0.014203, -0.389676, 1.43925, -0.163401, 0.0289096, -0.161449, -1.49101, -4.65565, -2.15238, -3.62995)
+
+[node name="RockRoundLB" parent="NavigationRegion3D/IslandMediumStandardA" index="2" instance=ExtResource("34_pewsj")]
+transform = Transform3D(6.79974, 0, -2.14577e-06, 0, 6.79973, 0, 2.14577e-06, 0, 6.79974, -2.27008, -0.678368, 2.82127)
+
+[node name="ScatterOutput" type="Marker3D" parent="NavigationRegion3D/IslandMediumStandardA" index="3"]
+transform = Transform3D(0.999999, -4.65662e-09, -2.68221e-07, 2.98023e-08, 0.999999, -6.84522e-08, 1.78814e-07, 3.21306e-08, 1, 0.0337963, 1.28827, -0.57555)
+
+[node name="ScatterItem" type="Node3D" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput" index="0"]
+
+[node name="TreeGenericASnow" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput/ScatterItem" index="0" instance=ExtResource("14_bh60u")]
+transform = Transform3D(-0.00653607, -0.0236885, 1.44707, 9.68018e-05, 1.44709, 0.0236892, -1.44727, 0.000203768, -0.0065335, 0.10865, -1.14871, 5.2591)
+
+[node name="ScatterItem2" type="Node3D" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput" index="1"]
+
+[node name="TreeGenericBSnow" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput/ScatterItem2" index="0" instance=ExtResource("15_5726i")]
+transform = Transform3D(0.149695, 0.0627189, 1.55908, -0.00468521, 1.56625, -0.0625575, -1.56033, 0.00131414, 0.149763, -0.566504, -0.689221, -4.75959)
+
+[node name="ScatterItem3" type="Node3D" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput" index="2"]
+
+[node name="ScatterItem4" type="Node3D" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput" index="3"]
+
+[node name="TreeGenericDSnow" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput/ScatterItem4" index="0" instance=ExtResource("16_jrjw7")]
+transform = Transform3D(1.63864, -0.0805087, 0.174569, 0.0810634, 1.64789, -0.00094311, -0.174312, 0.00951372, 1.64062, 5.36766, -1.49367, 2.00363)
+
+[node name="ScatterItem5" type="Node3D" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput" index="4"]
+
+[node name="TreeGenericDamagedBSnow" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput/ScatterItem5" index="0" instance=ExtResource("17_3wvup")]
+transform = Transform3D(0.898258, -0.0139923, 1.48161, -0.0403583, 1.73174, 0.0408226, -1.48113, -0.0556731, 0.897439, 4.06229, -0.549127, -0.307686)
+
+[node name="ScatterItem6" type="Node3D" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput" index="5"]
+
+[node name="TreeGenericDamagedCSnow" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput/ScatterItem6" index="0" instance=ExtResource("18_oxn25")]
+transform = Transform3D(2.00116, 0.097849, 0.777441, -0.0828734, 2.14675, -0.0568714, -0.77918, 0.0229768, 2.00274, -4.15714, -0.708048, 0.48185)
+
+[node name="ScatterItem7" type="Node3D" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput" index="6"]
+
+[node name="TreeGenericESnow" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput/ScatterItem7" index="0" instance=ExtResource("19_4hp7v")]
+transform = Transform3D(-1.43363, -0.00399048, 0.809632, 0.0212796, 1.64569, 0.0457915, -0.809363, 0.0503364, -1.43291, 4.20962, -0.588933, -3.15313)
+
+[node name="ScatterItem8" type="Node3D" parent="NavigationRegion3D/IslandMediumStandardA/ScatterOutput" index="7"]
+
+[node name="SilkWorm" parent="NavigationRegion3D/IslandMediumStandardA" index="4" instance=ExtResource("35_2tj1a")]
+transform = Transform3D(-0.721504, -0.542441, 0.430339, 0.442561, 0.116713, 0.889111, -0.532517, 0.831948, 0.155854, -5.03484, 0.14359, 4.62414)
+
+[node name="IslandLargeStandardA2" parent="NavigationRegion3D" index="6" instance=ExtResource("3_p13yq")]
+transform = Transform3D(0.863299, 0, 0.504693, 0, 1, 0, -0.504693, 0, 0.863299, -1.42169, 36.8129, -26.0652)
+
+[node name="ScatterOutput" type="Marker3D" parent="NavigationRegion3D/IslandLargeStandardA2" index="1"]
+transform = Transform3D(0.999998, -4.65661e-09, -2.08616e-07, 2.98023e-08, 0.999999, -6.84522e-08, 0, 3.21306e-08, 0.999999, 0, 1.48797, 0)
+
+[node name="ScatterItem" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput" index="0"]
+
+[node name="TreeFirA" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem" index="0" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(-0.0046686, -0.0169204, 1.03362, 6.91441e-05, 1.03363, 0.0169209, -1.03376, 0.00014555, -0.00466684, 0.736271, -0.723725, 4.73734)
+
+[node name="TreeFirA2" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem" index="1" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(0.554452, 0.0305846, 0.867516, -0.0155721, 1.02956, -0.0263451, -0.867915, 0.00106605, 0.554669, -7.62135, -1.06346, 2.28413)
+
+[node name="TreeFirA3" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem" index="2" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(0.106925, 0.0447992, 1.11363, -0.00334658, 1.11875, -0.0446839, -1.11452, 0.000938679, 0.106973, 2.10923, -0.7012, 3.22334)
+
+[node name="TreeFirA4" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem" index="3" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(-0.880106, 0.00295301, 0.505747, 0.00412225, 1.01506, 0.00124672, -0.505739, 0.00313481, -0.88011, 4.58981, -0.878911, -2.19891)
+
+[node name="TreeFirA5" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem" index="4" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(1.03841, 0.0161193, -0.224605, -0.00609945, 1.06145, 0.0479777, 0.2251, -0.0455985, 1.03743, 3.88656, -1.56301, 8.66081)
+
+[node name="TreeFirA6" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem" index="5" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(-1.15795, -0.0560558, 0.256315, -0.0440645, 1.18496, 0.0600803, -0.258647, 0.0490823, -1.15775, 1.85951, -0.930218, -6.87811)
+
+[node name="TreeFirA7" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem" index="6" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(-0.915467, 0.0668926, 0.517894, 0.0425083, 1.05132, -0.0606513, -0.520463, -0.0317948, -0.915902, -2.70148, -1.04718, -8.15067)
+
+[node name="ScatterItem2" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput" index="1"]
+
+[node name="TreeFirB" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem2" index="0" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(1.11433, -0.0137109, -0.229799, 0.00923367, 1.13759, -0.0230985, 0.230022, 0.020756, 1.11418, -7.85238, -1.16204, -0.460608)
+
+[node name="TreeFirB2" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem2" index="1" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(-0.577734, 0.0519839, -0.825371, 0.0207568, 1.00742, 0.0489206, 0.826746, 0.0110337, -0.578002, 3.54841, -0.767131, -4.97056)
+
+[node name="TreeFirB3" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem2" index="2" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(0.985268, -0.00489786, -0.225542, 0.00428605, 1.01075, -0.00322601, 0.225555, 0.00218824, 0.985275, -2.84804, -0.655335, 3.21014)
+
+[node name="TreeFirB4" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem2" index="3" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(-0.249649, -0.0575062, 1.1503, -0.00554754, 1.17706, 0.0576399, -1.15173, 0.0067955, -0.249618, 5.98003, -1.06135, 4.43311)
+
+[node name="TreeFirB5" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem2" index="4" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(0.933525, -0.00849325, 0.484365, -0.00802909, 1.05116, 0.0339065, -0.484372, -0.0337932, 0.932948, -2.37562, -0.678061, -3.00313)
+
+[node name="TreeFirB6" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem2" index="5" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(0.98692, 0.0272581, -0.317862, -0.0245803, 1.03683, 0.0125946, 0.31808, -0.00445113, 0.987216, -4.29431, -0.715321, 3.30393)
+
+[node name="TreeFirB7" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem2" index="6" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(0.805444, 0.0534187, 0.851433, -0.0275861, 1.17197, -0.0474332, -0.852661, 0.0125437, 0.805818, -4.66062, -0.719698, 1.91069)
+
+[node name="ScatterItem3" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput" index="2"]
+
+[node name="TreeFirC" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem3" index="0" instance=ExtResource("30_urvbq")]
+transform = Transform3D(-0.444024, 0.00690987, 0.965193, 0.000185458, 1.06242, -0.00752064, -0.965217, -0.00297458, -0.444014, 1.46247, -1.31003, -8.25207)
+
+[node name="TreeFirC2" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem3" index="1" instance=ExtResource("30_urvbq")]
+transform = Transform3D(0.155393, -0.0666569, 1.07276, 0.00380786, 1.08394, 0.0668001, -1.07483, -0.00579676, 0.155331, -6.52612, -0.969227, 3.73514)
+
+[node name="TreeFirC3" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem3" index="2" instance=ExtResource("30_urvbq")]
+transform = Transform3D(-0.933638, -0.0547686, -0.503008, -0.0418038, 1.06043, -0.0378697, 0.504251, -0.0134932, -0.934476, -3.77909, -0.741904, -3.67974)
+
+[node name="TreeFirC4" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem3" index="3" instance=ExtResource("30_urvbq")]
+transform = Transform3D(-1.10751, -0.00285033, -0.395583, -0.014777, 1.17549, 0.0329013, 0.395317, 0.0359546, -1.10703, 2.11015, -0.698295, 0.273682)
+
+[node name="TreeFirC5" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem3" index="4" instance=ExtResource("30_urvbq")]
+transform = Transform3D(1.15001, -0.0469409, 0.0442625, 0.045556, 1.15034, 0.0363335, -0.0456865, -0.0345258, 1.15039, -5.51053, -0.915872, -5.21705)
+
+[node name="TreeFirC6" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem3" index="5" instance=ExtResource("30_urvbq")]
+transform = Transform3D(1.12842, -0.0611065, 0.311159, 0.0579855, 1.17053, 0.0195879, -0.311756, -0.00346429, 1.1299, -3.77254, -0.790717, 4.98721)
+
+[node name="TreeFirC7" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem3" index="6" instance=ExtResource("30_urvbq")]
+transform = Transform3D(-0.57428, 0.0241263, -0.989755, 0.0213998, 1.14424, 0.0154755, 0.989817, -0.0107408, -0.574578, 1.01166, -0.746272, -5.16485)
+
+[node name="ScatterItem4" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput" index="3"]
+
+[node name="TreeFirD" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem4" index="0" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(-0.911289, -0.023611, 0.756472, -0.00861998, 1.18426, 0.0265791, -0.756792, 0.0149422, -0.911207, 0.107837, -0.688117, -3.16733)
+
+[node name="TreeFirD2" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem4" index="1" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(-0.730267, -0.0259481, 0.899169, -0.011292, 1.15834, 0.0242563, -0.899472, 0.00652501, -0.730325, -5.32577, -1.06394, -7.3534)
+
+[node name="TreeFirD3" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem4" index="2" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(0.0983717, 0.0182408, -1.14, 0.000773869, 1.14424, 0.0183754, 1.14015, -0.00235046, 0.0983466, -3.32098, -0.654387, 0.226904)
+
+[node name="TreeFirD4" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem4" index="3" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(0.623859, 0.0330934, 0.902366, -0.00974707, 1.09697, -0.0334915, -0.90292, 0.0110235, 0.623837, 3.4901, -0.774183, 1.58733)
+
+[node name="TreeFirD5" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem4" index="4" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(-1.03767, -0.0023381, -0.243785, -4.55519e-05, 1.06587, -0.0100287, 0.243796, -0.00975249, -1.03762, -0.106694, -0.619405, 1.58955)
+
+[node name="TreeFirD6" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem4" index="5" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(-0.002536, 0.0415348, 1.14712, 7.63777e-05, 1.14712, -0.0415348, -1.14787, -1.54352e-05, -0.0025371, 6.53151, -1.3668, 2.17807)
+
+[node name="TreeFirD7" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem4" index="6" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(0.981921, 0.0335815, 0.227435, -0.0256388, 1.00743, -0.0380583, -0.228467, 0.0312741, 0.981757, 2.11821, -0.682, -2.9386)
+
+[node name="ScatterItem5" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput" index="4"]
+
+[node name="TreeFirE" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem5" index="0" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(0.952681, 0.0038611, 0.447031, 0.0131134, 1.05162, -0.0370295, -0.446855, 0.0390927, 0.951969, -0.442005, -1.63781, 9.05024)
+
+[node name="TreeFirE2" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem5" index="1" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(-1.08695, 0.0379635, 0.090975, 0.041969, 1.0896, 0.04675, -0.089198, 0.0500573, -1.08661, 3.63192, -0.779485, 4.26425)
+
+[node name="TreeFirE3" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem5" index="2" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(-1.00876, -0.0647319, -0.421352, -0.0392815, 1.09195, -0.0737109, 0.424482, -0.0527836, -1.00815, -0.378531, -0.994556, 7.2858)
+
+[node name="TreeFirE4" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem5" index="3" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(0.590443, 0.0686949, -1.01377, -0.0286378, 1.17316, 0.0628161, 1.01569, -0.00685624, 0.591098, 2.18628, -0.697596, -1.67221)
+
+[node name="TreeFirE5" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem5" index="4" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(-0.659374, -0.00108607, 0.765647, -0.0224702, 1.01003, -0.0179185, -0.765318, -0.0287194, -0.659131, -0.852069, -0.761056, 5.56014)
+
+[node name="TreeFirE6" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem5" index="5" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(1.11661, -0.044514, -0.0778733, 0.0435486, 1.11925, -0.0153545, 0.0784172, 0.0122778, 1.11739, -2.1995, -0.796427, 5.79761)
+
+[node name="TreeFirE7" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem5" index="6" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(-0.338939, -0.0301099, -1.03618, -0.00331611, 1.09019, -0.0305946, 1.03661, -0.00635748, -0.338896, 1.27654, -0.90845, 6.6796)
+
+[node name="ScatterItem6" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput" index="5"]
+
+[node name="FirStumpA" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem6" index="0" instance=ExtResource("32_e21oj")]
+transform = Transform3D(0.264912, -0.0611082, 2.21648, 0.0115295, 2.23225, 0.060165, -2.21729, 0.00430634, 0.265128, -5.33871, -0.885061, 4.65698)
+
+[node name="FirStumpA2" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem6" index="1" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-2.18479, -0.1229, -0.723238, -0.0841358, 2.29908, -0.136522, 0.728765, -0.103018, -2.18398, 6.84177, -1.29055, -3.40698)
+
+[node name="FirStumpA3" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem6" index="2" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-1.16757, 0.0173326, -1.63671, -0.00928813, 2.01034, 0.0279152, 1.63677, 0.023772, -1.16737, -2.8393, -0.825409, -6.16043)
+
+[node name="FirStumpA4" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem6" index="3" instance=ExtResource("32_e21oj")]
+transform = Transform3D(1.36902, 0.0933221, 1.59939, -0.0598652, 2.1053, -0.0715984, -1.601, 0.00107812, 1.37033, -0.822128, -0.663443, 3.66445)
+
+[node name="FirStumpA5" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem6" index="4" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-1.8725, -0.0193798, -1.21443, -0.0132189, 2.23183, -0.0152335, 1.21451, -0.00558768, -1.87254, 2.68672, -1.222, 7.90749)
+
+[node name="FirStumpA6" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem6" index="5" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-1.3772, -0.123452, -1.66285, -0.0526025, 2.15884, -0.116708, 1.6666, -0.0338756, -1.37779, -0.440775, -1.03871, -8.0081)
+
+[node name="FirStumpA7" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem6" index="6" instance=ExtResource("32_e21oj")]
+transform = Transform3D(0.909527, 0.0643908, -1.92563, -0.00562204, 2.12948, 0.0685521, 1.9267, -0.0241829, 0.909223, -5.96685, -0.799761, -0.46089)
+
+[node name="ScatterItem7" type="Node3D" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput" index="6"]
+
+[node name="TreeFirDamagedA" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem7" index="0" instance=ExtResource("33_xowpd")]
+transform = Transform3D(-0.477895, 0.0598916, 1.05114, 0.0241597, 1.15468, -0.0548069, -1.05257, -0.000689035, -0.478505, 0.394044, -0.648724, -1.45794)
+
+[node name="TreeFirDamagedA2" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem7" index="1" instance=ExtResource("33_xowpd")]
+transform = Transform3D(-0.25054, -0.0457386, -1.08084, -0.00559821, 1.10949, -0.0456532, 1.08179, -0.00485139, -0.250556, 4.90205, -0.963778, 0.119029)
+
+[node name="TreeFirDamagedA3" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem7" index="2" instance=ExtResource("33_xowpd")]
+transform = Transform3D(-0.370315, -0.0317892, -0.933104, 0.0061781, 1.00372, -0.0366466, 0.933625, -0.0192508, -0.369866, 3.82377, -0.992149, -6.43029)
+
+[node name="TreeFirDamagedA4" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem7" index="3" instance=ExtResource("33_xowpd")]
+transform = Transform3D(-0.503369, 0.0126009, -1.0074, 0.0220261, 1.12601, 0.00307872, 1.00724, -0.0183261, -0.503517, -4.59898, -0.719611, -1.09792)
+
+[node name="TreeFirDamagedA5" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem7" index="4" instance=ExtResource("33_xowpd")]
+transform = Transform3D(-1.11848, 0.0446107, 0.0121186, 0.0449754, 1.11796, 0.0355478, -0.0106861, 0.0360044, -1.1188, -6.25297, -0.900851, -2.9925)
+
+[node name="TreeFirDamagedA6" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem7" index="5" instance=ExtResource("33_xowpd")]
+transform = Transform3D(-0.289519, -0.0509838, -1.14116, -0.0133529, 1.17731, -0.0492113, 1.14222, 0.000840172, -0.289826, -6.17789, -0.835794, 1.41047)
+
+[node name="TreeFirDamagedA7" parent="NavigationRegion3D/IslandLargeStandardA2/ScatterOutput/ScatterItem7" index="6" instance=ExtResource("33_xowpd")]
+transform = Transform3D(0.0587332, -0.00757907, 1.06053, 0.00141927, 1.06215, 0.00751208, -1.06055, 0.00100168, 0.0587418, 2.69287, -0.871756, 6.0691)
+
+[node name="IslandSmallStandardA" parent="NavigationRegion3D" index="7" instance=ExtResource("10_hn0ae")]
+transform = Transform3D(0.316891, 0, 0.948462, 0, 1, 0, -0.948462, 0, 0.316891, -8.82124, 5.69505, -24.7206)
+
+[node name="RockRoundLA" parent="NavigationRegion3D/IslandSmallStandardA" index="1" instance=ExtResource("28_wicvv")]
+transform = Transform3D(3.36332, -0.0542148, 0.149702, 0.0506249, 3.36572, 0.0815215, -0.150953, -0.0791795, 3.36277, 1.64359, -0.286336, 1.78106)
+
+[node name="TreeFirB" parent="NavigationRegion3D/IslandSmallStandardA" index="2" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(0.320149, -0.0341087, 1.07618, 0.0384497, 1.12239, 0.0241351, -1.07604, 0.0299579, 0.321055, 1.26031, 0.322654, -0.678112)
+
+[node name="TreeFirC" parent="NavigationRegion3D/IslandSmallStandardA" index="3" instance=ExtResource("30_urvbq")]
+transform = Transform3D(1.12, 0.0833283, 0.0221828, -0.0823766, 1.11936, -0.0456436, -0.0254906, 0.0438821, 1.12216, 2.72528, 0.136216, -0.228653)
+
+[node name="RockRoundLE" parent="NavigationRegion3D/IslandSmallStandardA" index="4" instance=ExtResource("29_hd0rs")]
+transform = Transform3D(2.76611, -0.0957261, 1.03245, -0.920408, -1.58117, 2.31932, 0.477468, -2.49344, -1.5104, -1.15587, 0.130929, -2.34844)
+
+[node name="SilkWorm" parent="NavigationRegion3D/IslandSmallStandardA" index="5" instance=ExtResource("35_2tj1a")]
+transform = Transform3D(0.505449, -0.104125, 0.85655, 0.200269, 0.97974, 0.00092195, -0.839293, 0.171074, 0.516062, -1.29459, 0.12286, 2.24095)
+
+[node name="IslandSmallStandardA2" parent="NavigationRegion3D" index="8" instance=ExtResource("10_hn0ae")]
+transform = Transform3D(-0.824709, 0, -0.565557, 0, 1, 0, 0.565557, 0, -0.824709, -18.7192, 10.9793, -30.1136)
+
+[node name="RockRoundLE" parent="NavigationRegion3D/IslandSmallStandardA2" index="1" instance=ExtResource("29_hd0rs")]
+transform = Transform3D(3.5075, 0, -3.57628e-07, 0, 3.5075, 0, 3.57628e-07, 0, 3.5075, 2.432, -0.700037, 0.107979)
+
+[node name="TreeGenericCSnow" parent="NavigationRegion3D/IslandSmallStandardA2" index="2" instance=ExtResource("37_j3rqa")]
+transform = Transform3D(1.31248, 0, 0.767321, 0, 1.52033, 0, -0.767321, 0, 1.31248, 1.97501, 0, 1.98524)
+
+[node name="TreeFirDamagedA" parent="NavigationRegion3D/IslandSmallStandardA2" index="3" instance=ExtResource("33_xowpd")]
+transform = Transform3D(1.36657, -0.0705049, -0.00661945, 0.0705357, 1.36657, 0.00636955, 0.00628239, -0.00670223, 1.36837, -2.59649, 0.143593, -2.0848)
+
+[node name="TreeFirDamagedA2" parent="NavigationRegion3D/IslandSmallStandardA2" index="4" instance=ExtResource("33_xowpd")]
+transform = Transform3D(-1.11636, 0.0778251, 0.787529, 0.072889, 1.36609, -0.0316759, -0.788002, 0.0161067, -1.11862, 1.43292, 0.353083, -1.75827)
+
+[node name="IslandMediumCurvedA" parent="NavigationRegion3D" index="9" instance=ExtResource("11_kvwsl")]
+transform = Transform3D(0.330234, 0, -0.943899, 0, 1, 0, 0.943899, 0, 0.330234, -18.3191, 15.4022, -45.395)
+
+[node name="RockRoundLDDirt" parent="NavigationRegion3D/IslandMediumCurvedA" index="1" instance=ExtResource("39_d8u1f")]
+transform = Transform3D(6.77046, -0.428297, 3.86422, -0.770236, -7.75379, 0.490121, 3.81083, -0.806255, -6.76627, 4.6797, -0.715613, -3.50141)
+
+[node name="RockTallA" parent="NavigationRegion3D/IslandMediumCurvedA" index="2" instance=ExtResource("40_sfaec")]
+transform = Transform3D(16.7072, 0, 4.29153e-06, 0, 16.7072, 0, -4.29153e-06, 0, 16.7072, 4.32258, -0.133192, -3.86248)
+
+[node name="PathPlacer" type="Path3D" parent="NavigationRegion3D/IslandMediumCurvedA" index="3"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 1.78417, 0)
+curve = SubResource("Curve3D_oidnm")
+script = ExtResource("9_epc6t")
+scene = ExtResource("10_c0rkp")
+
+[node name="@Node3D@399867" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="0" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.49795, 0.0515848, -0.0591187, 0.0541248, 1.49763, -0.0646361, 0.0568025, -0.0666809, -1.49744, 6.97027, -1.41235, 1.47602)
+
+[node name="@Node3D@399868" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="1" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.49021, 0.159675, -0.0615809, 0.162385, 1.48968, -0.066927, 0.0540329, -0.0731565, -1.49724, 5.46918, -1.32487, 1.53416)
+
+[node name="@Node3D@399869" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="2" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.45051, 0.120563, 0.362611, 0.139788, 1.49214, 0.0630628, -0.355642, 0.0947745, -1.45414, 3.9756, -1.22518, 1.55584)
+
+[node name="@Node3D@399870" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="3" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.44567, 0.0143951, 0.399789, 0.00899205, 1.49982, -0.0214877, -0.399947, -0.0183128, -1.44558, 2.53123, -1.20086, 1.15785)
+
+[node name="@Node3D@399871" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="4" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.15713, 0.0518285, 0.953087, 0.00436324, 1.49806, -0.0761665, -0.954486, -0.0559838, -1.15578, 1.14847, -1.19337, 0.639639)
+
+[node name="@Node3D@399872" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="5" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-1.15713, 0.0518285, 0.953087, 0.00436325, 1.49806, -0.0761665, -0.954485, -0.0559838, -1.15578, -0.0111809, -1.18899, -0.316787)
+
+[node name="@Node3D@399873" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="6" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.6709, 0.070946, 1.33972, 0.00478134, 1.49802, -0.0769341, -1.34159, -0.0301396, -0.67024, -0.716354, -1.18612, -1.62696)
+
+[node name="@Node3D@399874" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="7" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(-0.038117, 0.0195572, 1.49939, -0.0110447, 1.49983, -0.0198437, -1.49948, -0.0115445, -0.0379687, -0.868355, -1.187, -3.10104)
+
+[node name="@Node3D@399875" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="8" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(0.376163, 0.00182176, 1.45207, -0.0351441, 1.49957, 0.00722284, -1.45164, -0.0358324, 0.376098, -0.659744, -1.20528, -4.57073)
+
+[node name="@Node3D@399876" parent="NavigationRegion3D/IslandMediumCurvedA/PathPlacer" index="9" instance=ExtResource("10_c0rkp")]
+transform = Transform3D(0.379887, -0.0697413, 1.44942, -0.158624, 1.48729, 0.113138, -1.4424, -0.181929, 0.369294, -0.282242, -1.2755, -6.01944)
+
+[node name="ScatterOutput" type="Marker3D" parent="NavigationRegion3D/IslandMediumCurvedA" index="4"]
+transform = Transform3D(0.999998, -4.65661e-09, -1.49012e-07, 2.98023e-08, 0.999999, -6.84522e-08, -5.96046e-08, 3.21306e-08, 0.999999, 0, 0, 0)
+
+[node name="ScatterItem" type="Node3D" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput" index="0"]
+
+[node name="TreeFirA" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput/ScatterItem" index="0" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(-0.00466859, -0.0169204, 1.03362, 6.91441e-05, 1.03363, 0.0169209, -1.03376, 0.000145549, -0.00466684, 0.613331, 0.415972, 3.12545)
+
+[node name="ScatterItem2" type="Node3D" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput" index="1"]
+
+[node name="TreeFirB" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput/ScatterItem2" index="0" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(-1.15795, -0.0560558, 0.256316, -0.0440645, 1.18496, 0.0600803, -0.258647, 0.0490823, -1.15775, -2.5576, 0.169028, -6.29756)
+
+[node name="ScatterItem3" type="Node3D" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput" index="2"]
+
+[node name="TreeFirC" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput/ScatterItem3" index="0" instance=ExtResource("30_urvbq")]
+transform = Transform3D(-0.915467, 0.0668926, 0.517894, 0.0425083, 1.05132, -0.0606513, -0.520463, -0.0317948, -0.915902, -2.47089, 0.464864, -4.08067)
+
+[node name="ScatterItem4" type="Node3D" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput" index="3"]
+
+[node name="TreeFirD" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput/ScatterItem4" index="0" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(1.11531, -0.0433354, -0.221193, 0.0388406, 1.13688, -0.0268895, 0.222026, 0.0188063, 1.11583, -3.71164, 0.344826, -2.55295)
+
+[node name="ScatterItem5" type="Node3D" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput" index="4"]
+
+[node name="TreeFirE" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput/ScatterItem5" index="0" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(0.985268, -0.00489786, -0.225542, 0.00428605, 1.01075, -0.00322601, 0.225555, 0.00218824, 0.985275, -0.122231, 0.527941, 1.29268)
+
+[node name="ScatterItem6" type="Node3D" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput" index="5"]
+
+[node name="FirStumpA" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput/ScatterItem6" index="0" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-0.666371, -0.153497, 3.07043, -0.0148077, 3.14185, 0.153854, -3.07422, 0.0181388, -0.666288, 7.39439, 0.107495, 0.122986)
+
+[node name="ScatterItem7" type="Node3D" parent="NavigationRegion3D/IslandMediumCurvedA/ScatterOutput" index="6"]
+
+[node name="RockRoundLC" parent="NavigationRegion3D/IslandMediumCurvedA" index="5" instance=ExtResource("13_2waag")]
+transform = Transform3D(0.323941, 0, -3.28608, 0, 3.302, 0, 3.28608, 0, 0.323941, -2.46849, 0.191224, 0.340645)
+
+[node name="SilkWorm" parent="NavigationRegion3D/IslandMediumCurvedA" index="6" instance=ExtResource("35_2tj1a")]
+transform = Transform3D(0.999424, -0.0123548, 0.0316167, 0.0207154, 0.959849, -0.27975, -0.0268909, 0.280244, 0.959552, 6.88462, 0.0367785, 3.44933)
+
+[node name="IslandMediumWallA" parent="NavigationRegion3D" index="10" instance=ExtResource("12_xvm8x")]
+transform = Transform3D(0.999449, 0.0321493, 0.00816968, -0.0297873, 0.978221, -0.205417, -0.0145956, 0.20506, 0.97864, -7.36273, 22.9099, -39.2044)
+
+[node name="SpeedBoost" parent="NavigationRegion3D/IslandMediumWallA" index="1" instance=ExtResource("13_jkbl6")]
+transform = Transform3D(1, -7.45058e-09, 0, 7.68341e-09, 1, 5.96046e-08, -1.86265e-09, 5.96046e-08, 1, 0.372367, -5.57206, -8.52241)
+
+[node name="ScatterOutput" type="Marker3D" parent="NavigationRegion3D/IslandMediumWallA" index="2"]
+transform = Transform3D(0.999214, 0.0178162, 0.0353634, -0.0236985, 0.984529, 0.173605, -0.0317235, -0.174307, 0.984179, 0.0206423, 2.10253, -0.201954)
+
+[node name="ScatterItem" type="Node3D" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput" index="0"]
+
+[node name="TreeFirA" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem" index="0" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(-0.0046686, -0.0169204, 1.03362, 6.91441e-05, 1.03363, 0.0169209, -1.03376, 0.00014555, -0.00466684, -0.574775, -1.98462, 3.10524)
+
+[node name="TreeFirA2" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem" index="1" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(0.554452, 0.0305846, 0.867516, -0.0155721, 1.02956, -0.0263451, -0.867915, 0.00106605, 0.554669, -4.45955, -1.93935, 1.01608)
+
+[node name="TreeFirA3" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem" index="2" instance=ExtResource("27_q1i6s")]
+transform = Transform3D(0.106925, 0.0447992, 1.11363, -0.00334658, 1.11875, -0.0446839, -1.11452, 0.000938679, 0.106973, 1.44031, -1.67692, 2.4983)
+
+[node name="ScatterItem2" type="Node3D" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput" index="1"]
+
+[node name="TreeFirB" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem2" index="0" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(-0.880106, 0.00295301, 0.505747, 0.00412225, 1.01506, 0.00124672, -0.505739, 0.00313481, -0.88011, 2.69363, -0.820445, -1.1165)
+
+[node name="TreeFirB2" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem2" index="1" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(1.03841, 0.0161193, -0.224605, -0.00609945, 1.06145, 0.0479777, 0.2251, -0.0455985, 1.03743, 3.13692, -2.14467, 4.68446)
+
+[node name="TreeFirB3" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem2" index="2" instance=ExtResource("29_8s8xc")]
+transform = Transform3D(0.62933, 0.00911718, 0.906647, -0.0206929, 1.1035, 0.00326686, -0.906457, -0.0188613, 0.629387, 0.34189, -2.62544, 5.35606)
+
+[node name="ScatterItem3" type="Node3D" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput" index="2"]
+
+[node name="TreeFirC" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem3" index="0" instance=ExtResource("30_urvbq")]
+transform = Transform3D(-1.15795, -0.0560558, 0.256315, -0.0440645, 1.18496, 0.0600803, -0.258647, 0.0490823, -1.15775, 1.52714, -0.477631, -4.45405)
+
+[node name="TreeFirC2" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem3" index="1" instance=ExtResource("30_urvbq")]
+transform = Transform3D(-0.915467, 0.0668926, 0.517894, 0.0425083, 1.05132, -0.0606513, -0.520463, -0.0317948, -0.915902, -2.61293, -0.904243, -3.88716)
+
+[node name="TreeFirC3" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem3" index="2" instance=ExtResource("30_urvbq")]
+transform = Transform3D(1.11433, -0.0137109, -0.229799, 0.00923367, 1.13759, -0.0230985, 0.230022, 0.020756, 1.11418, -4.75631, -1.65203, -1.09867)
+
+[node name="ScatterItem4" type="Node3D" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput" index="3"]
+
+[node name="TreeFirD" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem4" index="0" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(-0.577734, 0.0519839, -0.825371, 0.0207568, 1.00742, 0.0489206, 0.826746, 0.0110337, -0.578002, 2.0881, -0.443485, -3.21948)
+
+[node name="TreeFirD2" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem4" index="1" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(0.985268, -0.00489786, -0.225542, 0.00428605, 1.01075, -0.00322601, 0.225555, 0.00218824, 0.985275, -1.31752, -1.74326, 1.22689)
+
+[node name="TreeFirD3" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem4" index="2" instance=ExtResource("30_x2b1e")]
+transform = Transform3D(-0.249649, -0.0575062, 1.1503, -0.00554754, 1.17706, 0.0576399, -1.15173, 0.0067955, -0.249618, 3.7114, -1.33758, 1.36063)
+
+[node name="ScatterItem5" type="Node3D" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput" index="4"]
+
+[node name="TreeFirE" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem5" index="0" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(0.933525, -0.00849325, 0.484365, -0.00802909, 1.05116, 0.0339065, -0.484372, -0.0337932, 0.932948, -0.818015, -1.04733, -1.64731)
+
+[node name="TreeFirE2" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem5" index="1" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(0.98692, 0.0272581, -0.317862, -0.0245803, 1.03683, 0.0125946, 0.31808, -0.00445113, 0.987216, -2.91273, -2.10723, 2.55168)
+
+[node name="TreeFirE3" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem5" index="2" instance=ExtResource("31_tuvxr")]
+transform = Transform3D(0.805444, 0.0534187, 0.851433, -0.0275861, 1.17197, -0.0474332, -0.852661, 0.0125437, 0.805818, -2.27808, -1.58987, 0.125809)
+
+[node name="ScatterItem6" type="Node3D" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput" index="5"]
+
+[node name="FirStumpA" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem6" index="0" instance=ExtResource("32_e21oj")]
+transform = Transform3D(0.310786, -0.133314, 2.14553, 0.00761572, 2.16789, 0.1336, -2.14965, -0.0115935, 0.310663, -4.33544, -2.41268, 3.39528)
+
+[node name="FirStumpA2" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem6" index="1" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-1.86728, -0.109537, -1.00602, -0.0836077, 2.12086, -0.0757393, 1.0085, -0.0269865, -1.86895, -3.01083, -1.15962, -2.08169)
+
+[node name="FirStumpA3" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem6" index="2" instance=ExtResource("32_e21oj")]
+transform = Transform3D(-2.21502, -0.00570067, -0.791166, -0.0295541, 2.35098, 0.0658026, 0.790635, 0.0719092, -2.21405, 1.42595, -1.21172, 0.0927867)
+
+[node name="ScatterItem7" type="Node3D" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput" index="6"]
+
+[node name="TreeFirDamagedA" parent="NavigationRegion3D/IslandMediumWallA/ScatterOutput/ScatterItem7" index="0" instance=ExtResource("33_xowpd")]
+transform = Transform3D(1.12842, -0.0611065, 0.311159, 0.0579855, 1.17053, 0.0195879, -0.311756, -0.00346429, 1.1299, -2.57613, -2.52446, 4.6343)
+
+[node name="ScatterCache" type="Node3D" parent="." index="3"]
+script = ExtResource("9_dkpg3")
+cache_file = "res://addons/proton_scatter/cache/chunk_e_2235045480_scatter_cache.tres"

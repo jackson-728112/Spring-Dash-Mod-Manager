@@ -7,4 +7,5 @@ How To Use
 - Run the program and click yes when steam asks to run with a modified pck
 ---
 Credits
+
 This project uses portions of [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp), created and maintained by @nikitalita and contributors, under the MIT License.

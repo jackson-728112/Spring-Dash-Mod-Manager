@@ -4,7 +4,7 @@ A mod manager for Spring Dash
 ---
 
 ## How To Use the manager
-- to use the software create a folder on the root of Spring Dash called "mods"
+- to use the software place the executable on the root of springdash and create a folder called "mods"
 - inside this folder place any mods 
 - Run the program and click yes when steam asks to run with a modified pck
 

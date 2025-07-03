@@ -9,7 +9,7 @@ How To Use the manager
 How to use the devloper tool
 - on the first run it will recover the game project o game-files to be use with goddot v4.1.3 and generate a checksum with the original files
 - this can be opened with said goddot version and eddited however you please
-- the next time you run the script it will compare the new files with the old ones and make your mod with the name developer-mod which can be used with the mod manager
+- the next time you run the script it will compare the new files with the old ones and make your mod with the name developer-mod which can be used with the mod manager by moving it into the mods folder
 ---
 How it works
 - the program takes all the mods in your mods folder and combines them into a folder called pak
